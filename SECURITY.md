@@ -40,4 +40,3 @@ Additional Resources
 GitHub Security Advisories
 Project Documentation (See “Security” section)
 Code of Conduct
-If you have any questions about this policy or general security concerns, please contact us at security@yourproject.org. We appreciate your efforts in making our project more secure!
