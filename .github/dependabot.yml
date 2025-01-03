@@ -1,11 +1,31 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
+# Dependabot Configuration
+# For full documentation:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
 updates:
-  - package-ecosystem: "" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"  # or "pip", "maven", "cargo", etc.
+    directory: "/"            # The root directory containing your package manifests
     schedule:
-      interval: "weekly"
+      interval: "weekly"      # "daily", "weekly", or "monthly"
+      day: "monday"           # Which day of the week for updates
+      time: "06:00"           # UTC time to create updates
+    # Limit how many simultaneous pull requests Dependabot can open
+    open-pull-requests-limit: 5
+    # Let Dependabot rebase automatically whenever it finds it necessary
+    rebase-strategy: "auto"
+    # Additional commit message/pull request settings
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include-scope: true
+    pull-request-title: "chore: Update dependencies"
+    labels:
+      - "dependencies"
+      - "automated"
+    # Optional: add reviewers or assignees
+    assignees:
+      - "your-github-username"
+    reviewers:
+      - "colleague1"
+      - "colleague2"
