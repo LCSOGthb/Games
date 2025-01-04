@@ -41,7 +41,3 @@ Security:
 See our Security Policy for details on reporting vulnerabilities and supported versions.
 Monitoring & Logs:
 Netlify logs are accessible via the Deploys page. Errors or warnings will appear there if you suspect a malfunction.
-Contact
-Project Maintainer: [Your Name] (youremail@example.com)
-Netlify Dashboard: https://app.netlify.com/sites/clown-game-ai/overview (example link)
-Feel free to reach out if you have questions or suggestions for improving Clown and its Netlify deployment!
