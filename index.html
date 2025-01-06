@@ -24,11 +24,21 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         button {
             padding: 10px 20px;
             font-size: 18px;
             cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -36,24 +46,39 @@
     <h1>Guess the Number</h1>
     <div id="game-container">
         <p>Guess a number between 1 and 10!</p>
-        <input type="number" id="player-input" placeholder="Enter your guess">
+        <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
     </div>
-    <img id="clown-image" src="images.jpg" alt="You failed!">
+    <img id="clown-image" src="images.jpg" alt="Clown image as punishment for a wrong guess.">
 
     <script>
         const correctNumber = Math.floor(Math.random() * 10) + 1;
 
         function checkGuess() {
-            const playerGuess = parseInt(document.getElementById("player-input").value);
+            const playerInput = document.getElementById("player-input");
+            const playerGuess = parseInt(playerInput.value);
             const clownImage = document.getElementById("clown-image");
+
+            if (playerGuess < 1 || playerGuess > 10 || isNaN(playerGuess)) {
+                alert("Please enter a valid number between 1 and 10!");
+                return;
+            }
 
             if (playerGuess === correctNumber) {
                 alert("Congratulations! You guessed it!");
+                resetGame();
             } else {
-                alert("Wrong guess! Here's your punishment.");
+                alert(`Wrong guess! The correct number was ${correctNumber}. Here's your punishment.`);
                 clownImage.style.display = "block";
+                clownImage.style.opacity = "1";
             }
+        }
+
+        function resetGame() {
+            document.getElementById("player-input").value = "";
+            const clownImage = document.getElementById("clown-image");
+            clownImage.style.display = "none";
+            clownImage.style.opacity = "0";
         }
     </script>
 </body>
