@@ -32,4 +32,4 @@ jobs:
         codeScanUrl: https://app.codescan.io/
         pollingTimeoutSec: 900
         generateSarifFile: true
-        sonar.login: ${40fb2bba3f81f865e726429cc378dd97b01fe1d3}
+        args: "-Dsonar.login=${{ secrets.SONAR_TOKEN }}"
