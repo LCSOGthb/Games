@@ -40,6 +40,10 @@
         button:hover {
             background-color: #0056b3;
         }
+        #reset-button {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -48,16 +52,18 @@
         <p>Guess a number between 1 and 10!</p>
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
+        <button id="reset-button" onclick="resetGame()">Play Again</button>
     </div>
     <img id="clown-image" src="images.jpg" alt="Clown image as punishment for a wrong guess.">
 
     <script>
-        const correctNumber = Math.floor(Math.random() * 10) + 1;
+        let correctNumber = Math.floor(Math.random() * 10) + 1;
 
         function checkGuess() {
             const playerInput = document.getElementById("player-input");
             const playerGuess = parseInt(playerInput.value);
             const clownImage = document.getElementById("clown-image");
+            const resetButton = document.getElementById("reset-button");
 
             if (playerGuess < 1 || playerGuess > 10 || isNaN(playerGuess)) {
                 alert("Please enter a valid number between 1 and 10!");
@@ -66,19 +72,23 @@
 
             if (playerGuess === correctNumber) {
                 alert("Congratulations! You guessed it!");
-                resetGame();
             } else {
                 alert(`Wrong guess! The correct number was ${correctNumber}. Here's your punishment.`);
                 clownImage.style.display = "block";
                 clownImage.style.opacity = "1";
             }
+
+            // Show the reset button after the guess
+            resetButton.style.display = "inline-block";
         }
 
         function resetGame() {
-            document.getElementById("player-input").value = "";
+            correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
+            document.getElementById("player-input").value = ""; // Clear input field
             const clownImage = document.getElementById("clown-image");
-            clownImage.style.display = "none";
-            clownImage.style.opacity = "0";
+            clownImage.style.display = "none"; // Hide clown image
+            clownImage.style.opacity = "0"; // Reset opacity
+            document.getElementById("reset-button").style.display = "none"; // Hide reset button
         }
     </script>
 </body>
