@@ -33,6 +33,20 @@
         .game-button:hover {
             background-color: #0056b3;
         }
+        #back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF5733;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        #back-button:hover {
+            background-color: #C70039;
+        }
         #clown-image {
             display: none;
             margin: 20px auto;
@@ -66,6 +80,7 @@
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
         <button id="reset-button" onclick="resetGame()">Play Again</button>
+        <button id="back-button" onclick="goBack()">Back to Menu</button>
     </div>
     <img id="clown-image" src="images.jpg" alt="Clown image as punishment for a wrong guess.">
 
@@ -79,6 +94,13 @@
                 document.getElementById('menu').style.display = 'none'; // Hide menu
                 document.getElementById('game-container').style.display = 'block'; // Show game
             }
+        }
+
+        // Back to the menu
+        function goBack() {
+            document.getElementById('game-container').style.display = 'none'; // Hide game container
+            document.getElementById('menu').style.display = 'block'; // Show menu
+            resetGame(); // Reset the game state for next time
         }
 
         function checkGuess() {
