@@ -1,27 +1,31 @@
-const translations = {
-    en: {
-        title: "Welcome to A Useless Website",
-        gameButton: "Guess The Number",
-        minecraftButton: "Minecraft",
-        loginTitle: "Login to Developer Mode"
-    },
-    es: {
-        title: "Bienvenido a A Useless Website",
-        gameButton: "Adivina El Número",
-        minecraftButton: "Minecraft",
-        loginTitle: "Iniciar sesión en el Modo Desarrollador"
-    }
-};
+const devUsername = "LCSdev";
+const devPassword = "LCSdev";
 
-function changeLanguage(language) {
-    document.getElementById("title").textContent = translations[language].title;
-    document.getElementById("game-button").textContent = translations[language].gameButton;
-    document.getElementById("minecraft-button").textContent = translations[language].minecraftButton;
-    document.getElementById("login-title").textContent = translations[language].loginTitle;
+// Toggle Developer Mode Login Screen
+function toggleDevMode() {
+    const loginContainer = document.getElementById("login-container");
+    loginContainer.style.display = loginContainer.style.display === "block" ? "none" : "block";
 }
 
-// Initialize the default language (English)
-changeLanguage('en');
+// Developer Authentication
+function authDev() {
+    const username = document.getElementById("dev-username").value;
+    const password = document.getElementById("dev-password").value;
+
+    if (username === devUsername && password === devPassword) {
+        alert("Access Granted! Welcome, Developer.");
+        // You can add further developer features here
+    } else {
+        alert("Access Denied! Incorrect username or password.");
+    }
+}
+
+// Cancel Developer Mode Login
+function cancelLogin() {
+    document.getElementById("dev-username").value = "";
+    document.getElementById("dev-password").value = "";
+    toggleDevMode(); // Hide the login screen
+}
 
 // Placeholder function for starting games
 function startGuessTheNumber() {
@@ -30,22 +34,4 @@ function startGuessTheNumber() {
 
 function startMinecraft() {
     alert("Minecraft is starting...");
-}
-
-function authDev() {
-    const username = document.getElementById("dev-username").value;
-    const password = document.getElementById("dev-password").value;
-
-    const devUsername = "LCSdev";
-    const devPassword = "LCSdev";
-
-    if (username === devUsername && password === devPassword) {
-        alert("Access Granted! Welcome, Developer.");
-    } else {
-        alert("Access Denied! Incorrect username or password.");
-    }
-}
-
-function cancelLogin() {
-    alert("Login canceled. Returning to main menu.");
 }
