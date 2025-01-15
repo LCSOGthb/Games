@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
         }
-        #menu, #game-container, #dev-container, #minecraft-container {
+        #menu, #game-container, #dev-container, #minecraft-container, #login-container {
             display: none;
             margin-top: 50px;
         }
@@ -88,6 +88,42 @@
         #dev-button:hover {
             color: #0056b3;
         }
+        #version {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Login screen styles */
+        #login-container {
+            display: block;
+            text-align: center;
+        }
+        #login-container input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #login-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        #login-container button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +132,16 @@
         <h1>Welcome to A Useless Website</h1>
         <button class="game-button" onclick="startGuessTheNumber()">Guess The Number</button>
         <button class="game-button" onclick="startMinecraft()">Minecraft</button>
-        <button id="dev-button" onclick="authDev()">Developer Mode</button>
+        <button id="dev-button" onclick="showLoginScreen()">Developer Mode</button>
+    </div>
+
+    <!-- Login Screen for Developer Mode -->
+    <div id="login-container">
+        <h2>Login to Developer Mode</h2>
+        <input type="text" id="dev-username" placeholder="Username" />
+        <input type="password" id="dev-password" placeholder="Password" />
+        <button onclick="authDev()">Login</button>
+        <button onclick="cancelLogin()">Cancel</button>
     </div>
 
     <!-- Developer Container -->
@@ -109,6 +154,7 @@
                 <p>Developer Mode is enabled for testing purposes.</p>
                 <p>Remember to keep everything under wraps during development.</p>
                 <p>Check each update carefully.</p>
+                <p><strong>Date and Time:</strong> <span id="dev-date-time"></span></p>
             </div>
         </div>
         <button id="back-button" onclick="backToMenu()">Back to Menu</button>
@@ -116,28 +162,32 @@
 
     <script>
         // Developer authentication
-        function authDev() {
-            const password = prompt("Enter Developer Password:");
-            
-            if (password === null) {
-                // If the user clicks Cancel, return early to avoid showing the "Access Denied" message
-                return;
-            }
+        function showLoginScreen() {
+            document.getElementById('menu').style.display = 'none'; // Hide menu
+            document.getElementById('login-container').style.display = 'block'; // Show login screen
+        }
 
+        function authDev() {
+            const username = document.getElementById("dev-username").value;
+            const password = document.getElementById("dev-password").value;
+
+            // Checking if the username and password match the dev credentials
+            const devUsername = "LCSdev";
             const devPassword = "LCSdev"; // Developer password
 
-            if (password === devPassword) {
+            if (username === devUsername && password === devPassword) {
                 alert("Access Granted! Welcome, Developer.");
                 showDevContainer();
             } else {
-                alert("Access Denied! Incorrect password.");
+                alert("Access Denied! Incorrect username or password.");
             }
         }
 
         // Show the developer container
         function showDevContainer() {
-            document.getElementById('menu').style.display = 'none'; // Hide menu
+            document.getElementById('login-container').style.display = 'none'; // Hide login screen
             document.getElementById('dev-container').style.display = 'block'; // Show developer container
+            updateDevDateTime(); // Update date and time when dev mode is shown
         }
 
         // Go back to the main menu
@@ -146,15 +196,40 @@
             document.getElementById('dev-container').style.display = 'none'; // Hide developer container
         }
 
+        // Cancel the login and go back to the menu
+        function cancelLogin() {
+            document.getElementById('menu').style.display = 'block'; // Show menu
+            document.getElementById('login-container').style.display = 'none'; // Hide login screen
+        }
+
         // Placeholder function to start Guess The Number
         function startGuessTheNumber() {
             alert("Guess The Number Game starting...");
         }
 
-        // Placeholder function to start Minecraft
+        // Updated function for Minecraft starting message
         function startMinecraft() {
-            alert("Minecraft section starting...");
+            alert("Minecraft is starting...");
         }
+
+        // Update Date and Time in Developer Notes
+        function updateDevDateTime() {
+            const now = new Date();
+            const dateTimeString = now.toLocaleString(); // Local date and time format
+            document.getElementById('dev-date-time').textContent = dateTimeString;
+        }
+
+        // Display the current version in the menu at the bottom right
+        function displayVersion() {
+            const version = "Version 1.0.0"; // Current version
+            document.getElementById('version').textContent = version;
+        }
+
+        // Display version on page load
+        window.onload = displayVersion;
     </script>
+
+    <!-- Display Current Version -->
+    <div id="version"></div>
 </body>
 </html>
