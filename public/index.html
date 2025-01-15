@@ -4,67 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Useless Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-
-        #menu, .game-section {
-            margin-top: 50px;
-        }
-
-        .game-section {
-            display: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #reset-button {
-            display: none;
-            margin-top: 10px;
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Menu Button -->
+    <button id="menu-button" onclick="goToMenu()" style="display: none;">Menu</button>
+
     <!-- Menu Section -->
     <div id="menu">
-    <h1>Welcome to A Useless Website</h1>
-    <button onclick="startGame()">Start Game</button>
-    <p id="game-start-message" style="color: #888; font-style: italic; margin-top: 10px;"></p>
-</div>
+        <h1>Welcome to A Useless Website</h1>
+        <button onclick="startGame()">Start Game</button>
+        <p id="game-start-message" style="color: #888; font-style: italic; margin-top: 10px;"></p>
+    </div>
 
-<div id="loading-screen" style="display: none;">
-    <h1>Loading...</h1>
-</div>
+    <div id="loading-screen" style="display: none;">
+        <h1>Loading...</h1>
+    </div>
 
-<div id="game-selection" style="display: none;">
-    <h2>Select a Game</h2>
-    <button onclick="loadGame('guess')">Guess The Number</button>
-    <button onclick="loadGame('minecraft')">Minecraft</button>
-</div>
+    <div id="game-selection" style="display: none;">
+        <h2>Select a Game</h2>
+        <button onclick="loadGame('guess')">Guess The Number</button>
+        <button onclick="loadGame('minecraft')">Minecraft</button>
+    </div>
     
     <!-- Guess The Number Game Section -->
     <div id="guess-game" class="game-section">
