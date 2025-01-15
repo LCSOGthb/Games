@@ -51,10 +51,21 @@
 <body>
     <!-- Menu Section -->
     <div id="menu">
-        <h1>Welcome to A Useless Website</h1>
-        <button onclick="startGame()">Start Game</button>
-    </div>
+    <h1>Welcome to A Useless Website</h1>
+    <button onclick="startGame()">Start Game</button>
+    <p id="game-start-message" style="color: #888; font-style: italic; margin-top: 10px;"></p>
+</div>
 
+<div id="loading-screen" style="display: none;">
+    <h1>Loading...</h1>
+</div>
+
+<div id="game-selection" style="display: none;">
+    <h2>Select a Game</h2>
+    <button onclick="loadGame('guess')">Guess The Number</button>
+    <button onclick="loadGame('minecraft')">Minecraft</button>
+</div>
+    
     <!-- Guess The Number Game Section -->
     <div id="guess-game" class="game-section">
         <h2>Guess The Number</h2>
