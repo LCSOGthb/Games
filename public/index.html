@@ -4,39 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Useless Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Menu Button -->
-    <button id="menu-button" onclick="goToMenu()" style="display: none;">Menu</button>
+    <button id="menu-button" onclick="goToMenu()">Menu</button>
 
-    <!-- Menu Section -->
+    <!-- Main Menu -->
     <div id="menu">
         <h1>Welcome to A Useless Website</h1>
         <button onclick="startGame()">Start Game</button>
         <p id="game-start-message" style="color: #888; font-style: italic; margin-top: 10px;"></p>
     </div>
 
+    <!-- Loading Screen -->
     <div id="loading-screen" style="display: none;">
         <h1>Loading...</h1>
     </div>
 
+    <!-- Game Selection -->
     <div id="game-selection" style="display: none;">
         <h2>Select a Game</h2>
         <button onclick="loadGame('guess')">Guess The Number</button>
         <button onclick="loadGame('minecraft')">Minecraft</button>
     </div>
     
-    <!-- Guess The Number Game Section -->
-    <div id="guess-game" class="game-section">
-        <h2>Guess The Number</h2>
-        <p>Guess a number between 1 and 10!</p>
-        <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
-        <button onclick="checkGuess()">Submit</button>
-        <button id="reset-button" onclick="resetGame()">Play Again</button>
-    </div>
-
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
         Version: <span id="version-info">Loading...</span>
     </footer>
