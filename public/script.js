@@ -8,31 +8,52 @@ function initializeGame() {
     console.log(`Correct Number (for debugging): ${correctNumber}`); // Debugging purpose
 }
 
+// Show the menu button
+function showMenuButton() {
+    const menuButton = document.getElementById("menu-button");
+    menuButton.style.display = "block";
+}
+
+// Hide the menu button
+function hideMenuButton() {
+    const menuButton = document.getElementById("menu-button");
+    menuButton.style.display = "none";
+}
+
+// Go back to the main menu
+function goToMenu() {
+    document.getElementById("menu").style.display = "block"; // Show menu
+    document.getElementById("game-selection").style.display = "none"; // Hide game selection
+    document.getElementById("guess-game").style.display = "none"; // Hide game section
+    hideMenuButton(); // Hide the menu button
+}
+
 // Start the game and switch to the game section
 function startGame() {
-    // Display "Game is starting..." message
     const messageElement = document.getElementById("game-start-message");
     messageElement.textContent = "Game is starting...";
 
-    // Show the loading screen after 1 second
     setTimeout(() => {
         document.getElementById("menu").style.display = "none"; // Hide menu
         document.getElementById("loading-screen").style.display = "block"; // Show loading screen
     }, 1000);
 
-    // Transition to the game selection screen after 2 seconds
     setTimeout(() => {
         document.getElementById("loading-screen").style.display = "none"; // Hide loading screen
         document.getElementById("game-selection").style.display = "block"; // Show game selection
     }, 3000);
 }
 
+// Load the selected game
 function loadGame(game) {
-    if (game === 'guess') {
+    showMenuButton(); // Show menu button
+    document.getElementById("game-selection").style.display = "none"; // Hide game selection
+
+    if (game === "guess") {
         alert("Starting Guess The Number...");
-        document.getElementById("game-selection").style.display = "none"; // Hide game selection
-        document.getElementById("guess-game").style.display = "block"; // Show the Guess The Number game
-    } else if (game === 'minecraft') {
+        document.getElementById("guess-game").style.display = "block"; // Show Guess The Number game
+        initializeGame(); // Initialize game
+    } else if (game === "minecraft") {
         alert("Minecraft is starting...");
         // Add Minecraft game logic here if needed
     }
@@ -43,21 +64,18 @@ function checkGuess() {
     const playerInput = document.getElementById("player-input");
     const playerGuess = parseInt(playerInput.value);
 
-    // Validate the input
     if (isNaN(playerGuess) || playerGuess < 1 || playerGuess > 10) {
         alert("Please enter a valid number between 1 and 10!");
         return;
     }
 
-    // Check if the player's guess matches the correct number
     if (playerGuess === correctNumber) {
         alert("Congratulations! You guessed it!");
     } else {
         alert(`Wrong guess! The correct number was ${correctNumber}.`);
     }
 
-    // Show the "Play Again" button after the game ends
-    document.getElementById("reset-button").style.display = "inline-block";
+    document.getElementById("reset-button").style.display = "inline-block"; // Show the "Play Again" button
 }
 
 // Reset the game to its initial state
@@ -66,14 +84,14 @@ function resetGame() {
     initializeGame(); // Reinitialize the game
 }
 
-// Fetch the version info from your GitHub repo (simulating version tracking)
+// Fetch the version info from GitHub
 async function fetchVersionInfo() {
     try {
         const response = await fetch("https://api.github.com/repos/LCSOGthb/Games/commits");
         if (response.ok) {
             const data = await response.json();
             const latestCommit = data[0];
-            const commitHash = latestCommit.sha.substring(0, 7); // Shortened commit hash
+            const commitHash = latestCommit.sha.substring(0, 7);
             const commitDate = new Date(latestCommit.commit.author.date).toLocaleDateString();
             document.getElementById("version-info").textContent = `v1.0 (${commitHash} - ${commitDate})`;
         } else {
@@ -85,5 +103,6 @@ async function fetchVersionInfo() {
     }
 }
 
-// Run version fetching on page load
+// Initialize
 fetchVersionInfo();
+initializeGame();
