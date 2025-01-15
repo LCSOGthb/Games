@@ -12,8 +12,26 @@
             margin: 0;
             padding: 0;
         }
-        #game-container {
+        #menu, #game-container {
+            display: none;
             margin-top: 50px;
+        }
+        #menu {
+            display: block;
+        }
+        .game-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .game-button:hover {
+            background-color: #0056b3;
         }
         #clown-image {
             display: none;
@@ -27,19 +45,6 @@
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
         #reset-button {
             display: none;
             margin-top: 20px;
@@ -47,8 +52,16 @@
     </style>
 </head>
 <body>
-    <h1>Guess the Number</h1>
+    <!-- Game Selection Menu -->
+    <div id="menu">
+        <h1>Select a Game</h1>
+        <button class="game-button" onclick="startGame('guessNumber')">Guess the Number</button>
+        <button class="game-button" onclick="alert('More games coming soon!')">Other Game</button>
+    </div>
+
+    <!-- Game Container -->
     <div id="game-container">
+        <h1>Guess the Number</h1>
         <p>Guess a number between 1 and 10!</p>
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
@@ -57,7 +70,16 @@
     <img id="clown-image" src="images.jpg" alt="Clown image as punishment for a wrong guess.">
 
     <script>
-        let correctNumber = Math.floor(Math.random() * 10) + 1;
+        let correctNumber;
+
+        // Show the selected game
+        function startGame(game) {
+            if (game === 'guessNumber') {
+                correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
+                document.getElementById('menu').style.display = 'none'; // Hide menu
+                document.getElementById('game-container').style.display = 'block'; // Show game
+            }
+        }
 
         function checkGuess() {
             const playerInput = document.getElementById("player-input");
@@ -78,8 +100,7 @@
                 clownImage.style.opacity = "1";
             }
 
-            // Show the reset button after the guess
-            resetButton.style.display = "inline-block";
+            resetButton.style.display = "inline-block"; // Show reset button
         }
 
         function resetGame() {
