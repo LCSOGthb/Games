@@ -59,6 +59,20 @@
             margin: 20px auto;
             overflow-wrap: break-word;
         }
+        .dev-history {
+            background-color: #333;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 15px;
+        }
+        .dev-history h3 {
+            margin-bottom: 10px;
+        }
+        .dev-history p {
+            font-size: 14px;
+            color: #ccc;
+            margin: 5px 0;
+        }
         #dev-button {
             position: fixed;
             bottom: 10px;
@@ -108,8 +122,29 @@
         <h1>Developer Mode</h1>
         <p>Welcome, Developer! Here's your exclusive information:</p>
         <div class="dev-info" id="dev-info">
-            <!-- Developer-only information -->
+            <strong>Current State:</strong><br>
+            Correct Number: ${correctNumber || "N/A"}<br>
+            Current Time: ${new Date().toLocaleString()}<br>
         </div>
+
+        <div class="dev-history">
+            <h3>Developer History & Notes:</h3>
+            <p><strong>January 2025 - Update v1.1:</strong></p>
+            <ul>
+                <li><span class="timestamp">[2025-01-15]</span> Fixed "Play Again" button showing before the game started.</li>
+                <li><span class="timestamp">[2025-01-14]</span> Added "Minecraft" placeholder and fixed game selection flow.</li>
+                <li><span class="timestamp">[2025-01-12]</span> Updated layout for better responsiveness, especially on mobile.</li>
+                <li><span class="timestamp">[2025-01-10]</span> Developer mode notes section added to track changes.</li>
+                <li><span class="timestamp">[2025-01-08]</span> Minor bug fixes and UI improvements for game input.</li>
+            </ul>
+            <p><strong>Next Actions:</strong></p>
+            <ul>
+                <li>Ensure game is mobile-responsive.</li>
+                <li>Test Minecraft placeholder functionality.</li>
+                <li>Clean up old game-related assets that are no longer in use.</li>
+            </ul>
+        </div>
+
         <button id="back-button" onclick="goBack()">Back to Menu</button>
     </div>
 
@@ -125,7 +160,7 @@
                 correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
                 document.getElementById('menu').style.display = 'none'; // Hide menu
                 document.getElementById('game-container').style.display = 'block'; // Show game
-                document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
+                document.getElementById('reset-button').style.display = 'none'; // Hide Play Again button initially
             }
             if (game === 'minecraft') {
                 // Display Minecraft placeholder content
@@ -160,24 +195,11 @@
         function showDevContainer() {
             document.getElementById('menu').style.display = 'none'; // Hide menu
             document.getElementById('dev-container').style.display = 'block'; // Show developer container
-
-            const devInfo = document.getElementById('dev-info');
-            devInfo.innerHTML = `
-                <strong>Game State:</strong><br>
-                Correct Number: ${correctNumber || "N/A"}<br>
-                Current Time: ${new Date().toLocaleString()}<br>
-                <strong>Notes:</strong><br>
-                - Add more games to the menu.<br>
-                - Optimize game logic.<br>
-                - Ensure responsive design compatibility.
-            `;
         }
 
         function checkGuess() {
             const playerInput = document.getElementById("player-input");
             const playerGuess = parseInt(playerInput.value);
-            const clownImage = document.getElementById("clown-image");
-            const resetButton = document.getElementById("reset-button");
 
             if (playerGuess < 1 || playerGuess > 10 || isNaN(playerGuess)) {
                 alert("Please enter a valid number between 1 and 10!");
@@ -190,13 +212,13 @@
                 alert(`Wrong guess! The correct number was ${correctNumber}.`);
             }
 
-            resetButton.style.display = "inline-block"; // Show reset button
+            document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
         }
 
         function resetGame() {
             correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
             document.getElementById("player-input").value = ""; // Clear input field
-            document.getElementById("reset-button").style.display = "inline-block"; // Keep Play Again visible
+            document.getElementById("reset-button").style.display = 'none'; // Hide Play Again button until the game is played again
         }
     </script>
 
