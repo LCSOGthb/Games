@@ -13,8 +13,15 @@
             padding: 0;
         }
 
-        #menu {
-            margin-top: 50px;
+        .game-section {
+            display: none;
+        }
+
+        #developer-mode-screen {
+            display: none;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         button {
@@ -48,22 +55,71 @@
 <body>
     <div id="menu">
         <h1>Welcome to A Useless Website</h1>
-        <button onclick="startGame()">Start Game</button>
+        <button onclick="showGame('guess-game')">Guess The Number</button>
+        <button onclick="showGame('minecraft-game')">Minecraft</button>
     </div>
 
+    <!-- Game Sections -->
+    <div id="guess-game" class="game-section">
+        <h2>Guess The Number</h2>
+        <p>Guess a number between 1 and 10!</p>
+        <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
+        <button onclick="checkGuess()">Submit</button>
+        <button id="reset-button" onclick="resetGame()">Play Again</button>
+    </div>
+
+    <div id="minecraft-game" class="game-section">
+        <h2>Minecraft Placeholder</h2>
+        <p>Minecraft is starting...</p>
+    </div>
+
+    <!-- Developer Mode -->
+    <button onclick="openDeveloperMode()" style="position: fixed; bottom: 10px; left: 10px;">Developer Mode</button>
+    <div id="developer-mode-screen">
+        <h2>Developer Mode</h2>
+        <p>Welcome to Developer Mode. Add your tools here!</p>
+    </div>
+
+    <!-- Version -->
     <div id="version">Loading commit info...</div>
 
     <script>
+        // Developer Mode Logic
+        const devPassword = "LCSdev";
+
+        function openDeveloperMode() {
+            const enteredPassword = prompt("Enter Developer Password:");
+            if (enteredPassword === devPassword) {
+                document.getElementById("developer-mode-screen").style.display = "block"; // Show dev mode screen
+                alert("Developer Mode Activated!");
+            } else if (enteredPassword === null) {
+                alert("Login cancelled.");
+            } else {
+                alert("Access Denied! Incorrect password.");
+            }
+        }
+
+        // Game Switching Logic
+        function showGame(gameId) {
+            const gameSections = document.querySelectorAll('.game-section');
+            gameSections.forEach(section => section.style.display = 'none'); // Hide all sections
+            const selectedGame = document.getElementById(gameId);
+            if (selectedGame) {
+                selectedGame.style.display = 'block'; // Show the selected game
+            }
+        }
+
+        // Fetch Version (Optional)
         async function fetchLatestCommit() {
-            const repoOwner = "LCSOGthb"; // GitHub username
-            const repoName = "Games";     // Repository name
+            const repoOwner = "LCSOGthb";
+            const repoName = "Games";
 
             try {
                 const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/commits/main`);
                 if (response.ok) {
                     const data = await response.json();
-                    const commitHash = data.sha.substring(0, 7); // Shorten the hash for display
-                    const commitDate = new Date(data.commit.author.date).toLocaleString(); // Format the commit date
+                    const commitHash = data.sha.substring(0, 7);
+                    const commitDate = new Date(data.commit.author.date).toLocaleString();
                     document.getElementById("version").textContent = `Commit: ${commitHash} | Date: ${commitDate}`;
                 } else {
                     console.error("Failed to fetch commit:", response.statusText);
@@ -75,12 +131,7 @@
             }
         }
 
-        function startGame() {
-            alert("Game starting...");
-        }
-
-        // Fetch the latest commit on page load
-        fetchLatestCommit();
+        fetchLatestCommit(); // Fetch version info
     </script>
 </body>
 </html>
