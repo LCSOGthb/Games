@@ -10,10 +10,32 @@ function initializeGame() {
 
 // Start the game and switch to the game section
 function startGame() {
-    alert("Game is starting...");
-    document.getElementById("menu").style.display = "none"; // Hide the menu
-    document.getElementById("guess-game").style.display = "block"; // Show the game section
-    initializeGame(); // Initialize the game
+    // Display "Game is starting..." message
+    const messageElement = document.getElementById("game-start-message");
+    messageElement.textContent = "Game is starting...";
+
+    // Show the loading screen after 1 second
+    setTimeout(() => {
+        document.getElementById("menu").style.display = "none"; // Hide menu
+        document.getElementById("loading-screen").style.display = "block"; // Show loading screen
+    }, 1000);
+
+    // Transition to the game selection screen after 2 seconds
+    setTimeout(() => {
+        document.getElementById("loading-screen").style.display = "none"; // Hide loading screen
+        document.getElementById("game-selection").style.display = "block"; // Show game selection
+    }, 3000);
+}
+
+function loadGame(game) {
+    if (game === 'guess') {
+        alert("Starting Guess The Number...");
+        document.getElementById("game-selection").style.display = "none"; // Hide game selection
+        document.getElementById("guess-game").style.display = "block"; // Show the Guess The Number game
+    } else if (game === 'minecraft') {
+        alert("Minecraft is starting...");
+        // Add Minecraft game logic here if needed
+    }
 }
 
 // Check the player's guess
