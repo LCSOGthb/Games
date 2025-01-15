@@ -1,229 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Useless Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        #menu, #game-container, #dev-container, #minecraft-container {
-            display: none;
-            margin-top: 50px;
-        }
-        #menu {
-            display: block; /* Show the menu by default */
-        }
-        .game-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            margin: 10px;
-            transition: background-color 0.3s;
-        }
-        .game-button:hover {
-            background-color: #0056b3;
-        }
-        #back-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #FF5733;
-            color: white;
-            transition: background-color 0.3s;
-        }
-        #back-button:hover {
-            background-color: #C70039;
-        }
-        .dev-info {
-            margin-top: 20px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #222;
-            color: white;
-            border-radius: 5px;
-            text-align: left;
-            max-width: 600px;
-            margin: 20px auto;
-            overflow-wrap: break-word;
-        }
-        .dev-history {
-            background-color: #333;
-            border-radius: 5px;
-            margin-top: 10px;
-            padding: 15px;
-        }
-        .dev-history h3 {
-            margin-bottom: 10px;
-        }
-        .dev-history p {
-            font-size: 14px;
-            color: #ccc;
-            margin: 5px 0;
-        }
-        #dev-button {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            font-size: 14px;
-            color: #007BFF;
-            border: none;
-            background: none;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        #dev-button:hover {
-            color: #0056b3;
-        }
-    </style>
-    
-    <!-- Turnstile API Script -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-</head>
-<body>
-    <!-- Game Selection Menu -->
-    <div id="menu">
-        <h1>Select a Game</h1>
-        <button class="game-button" onclick="startGame('guessNumber')">Guess The Number</button>
-        <button class="game-button" onclick="startGame('minecraft')">Minecraft</button> <!-- New Minecraft button -->
-    </div>
-
-    <!-- Game Container -->
-    <div id="game-container">
-        <h1>Guess The Number</h1>
-        <p>Guess a number between 1 and 10!</p>
-        <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
-        <button onclick="checkGuess()">Submit</button>
-        <button id="reset-button" onclick="resetGame()">Play Again</button>
-        <button id="back-button" onclick="goBack()">Back to Menu</button>
-    </div>
-
-    <!-- Minecraft Game Container (Placeholder) -->
-    <div id="minecraft-container">
-        <h1>Minecraft Game (Placeholder)</h1>
-        <p>This is a placeholder for the Minecraft game. Customize it later.</p>
-        <button id="back-button" onclick="goBack()">Back to Menu</button>
-    </div>
-
-    <!-- Developer Container -->
-    <div id="dev-container">
-        <h1>Developer Mode</h1>
-        <p>Welcome, Developer! Here's your exclusive information:</p>
-        <div class="dev-info" id="dev-info">
-            <strong>Current State:</strong><br>
-            Correct Number: ${correctNumber || "N/A"}<br>
-            Current Time: ${new Date().toLocaleString()}<br>
-        </div>
-
-        <div class="dev-history">
-            <h3>Developer History & Notes:</h3>
-            <p><strong>January 2025 - Update v1.1:</strong></p>
-            <ul>
-                <li><span class="timestamp">[2025-01-15]</span> Fixed "Play Again" button showing before the game started.</li>
-                <li><span class="timestamp">[2025-01-14]</span> Added "Minecraft" placeholder and fixed game selection flow.</li>
-                <li><span class="timestamp">[2025-01-12]</span> Updated layout for better responsiveness, especially on mobile.</li>
-                <li><span class="timestamp">[2025-01-10]</span> Developer mode notes section added to track changes.</li>
-                <li><span class="timestamp">[2025-01-08]</span> Minor bug fixes and UI improvements for game input.</li>
-            </ul>
-            <p><strong>Next Actions:</strong></p>
-            <ul>
-                <li>Ensure game is mobile-responsive.</li>
-                <li>Test Minecraft placeholder functionality.</li>
-                <li>Clean up old game-related assets that are no longer in use.</li>
-            </ul>
-        </div>
-
-        <button id="back-button" onclick="goBack()">Back to Menu</button>
-    </div>
-
-    <!-- Developer Mode Button -->
-    <button id="dev-button" onclick="authDev()">Developer Mode</button>
-
-    <script>
-        let correctNumber;
-
-        // Show the selected game
-        function startGame(game) {
-            if (game === 'guessNumber') {
-                correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
-                document.getElementById('menu').style.display = 'none'; // Hide menu
-                document.getElementById('game-container').style.display = 'block'; // Show game
-                document.getElementById('reset-button').style.display = 'none'; // Hide Play Again button initially
-            }
-            if (game === 'minecraft') {
-                // Display Minecraft placeholder content
-                document.getElementById('menu').style.display = 'none'; // Hide menu
-                document.getElementById('minecraft-container').style.display = 'block'; // Show Minecraft container
-            }
-        }
-
-        // Back to the menu
-        function goBack() {
-            document.getElementById('menu').style.display = 'block'; // Show menu
-            document.getElementById('game-container').style.display = 'none'; // Hide game container
-            document.getElementById('minecraft-container').style.display = 'none'; // Hide Minecraft container
-            document.getElementById('dev-container').style.display = 'none'; // Hide developer container
-            resetGame(); // Reset the game state for next time
-        }
-
-        // Developer authentication
-        function authDev() {
-            const password = prompt("Enter Developer Password:");
-            const devPassword = "dev123"; // Replace with a more secure password or hash
-
-            if (password === devPassword) {
-                alert("Access Granted! Welcome, Developer.");
-                showDevContainer();
-            } else {
-                alert("Access Denied! Incorrect password.");
-            }
-        }
-
-        // Show the developer container
-        function showDevContainer() {
-            document.getElementById('menu').style.display = 'none'; // Hide menu
-            document.getElementById('dev-container').style.display = 'block'; // Show developer container
-        }
-
-        function checkGuess() {
-            const playerInput = document.getElementById("player-input");
-            const playerGuess = parseInt(playerInput.value);
-
-            if (playerGuess < 1 || playerGuess > 10 || isNaN(playerGuess)) {
-                alert("Please enter a valid number between 1 and 10!");
-                return;
-            }
-
-            if (playerGuess === correctNumber) {
-                alert("Congratulations! You guessed it!");
-            } else {
-                alert(`Wrong guess! The correct number was ${correctNumber}.`);
-            }
-
-            document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
-        }
-
-        function resetGame() {
-            correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
-            document.getElementById("player-input").value = ""; // Clear input field
-            document.getElementById("reset-button").style.display = 'none'; // Hide Play Again button until the game is played again
-        }
-    </script>
-
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0d5e77368d2644a38d47c488e4e0ab59"}'></script>
-    <!-- End Cloudflare Web Analytics -->
-</body>
-</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    #menu, #game-container, #dev-container, #minecraft-container {
+        display: none;
+        margin-top: 50px;
+    }
+    #menu {
+        display: block; /* Show the menu by default */
+    }
+    .game-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #007BFF;
+        color: white;
+        margin: 10px;
+        transition: background-color 0.3s;
+    }
+    .game-button:hover {
+        background-color: #0056b3;
+    }
+    #back-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #FF5733;
+        color: white;
+        transition: background-color 0.3s;
+    }
+    #back-button:hover {
+        background-color: #C70039;
+    }
+    .dev-info {
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #ffffff; /* Light background for dev info */
+        color: #333;
+        border-radius: 5px;
+        text-align: left;
+        max-width: 600px;
+        margin: 20px auto;
+        overflow-wrap: break-word;
+    }
+    .dev-history {
+        background-color: #f5f5f5; /* Matches the current theme background */
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 15px;
+        color: #333; /* Dark text for readability */
+    }
+    .dev-history h3 {
+        margin-bottom: 10px;
+    }
+    .dev-history p {
+        font-size: 14px;
+        color: #666; /* Light color for history notes */
+        margin: 5px 0;
+    }
+    #dev-button {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: #007BFF;
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    #dev-button:hover {
+        color: #0056b3;
+    }
+</style>
