@@ -7,22 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Language Selection -->
-    <div>
-        <button onclick="changeLanguage('en')">English</button>
-        <button onclick="changeLanguage('es')">Español</button>
-    </div>
-
     <!-- Main Menu -->
     <div id="menu">
-        <h1 id="title"></h1>
-        <button class="game-button" onclick="startGuessTheNumber()" id="game-button"></button>
-        <button class="game-button" onclick="startMinecraft()" id="minecraft-button"></button>
+        <h1 id="title">Welcome to A Useless Website</h1>
+        <button class="game-button" onclick="startGuessTheNumber()" id="game-button">Guess The Number</button>
+        <button class="game-button" onclick="startMinecraft()" id="minecraft-button">Minecraft</button>
     </div>
+
+    <!-- Developer Mode Button at Bottom Left -->
+    <button id="dev-mode-button" onclick="toggleDevMode()">Developer Mode</button>
 
     <!-- Developer Mode Login Screen -->
     <div id="login-container">
-        <h2 id="login-title"></h2>
+        <h2 id="login-title">Login to Developer Mode</h2>
         <input type="text" id="dev-username" placeholder="Username" />
         <input type="password" id="dev-password" placeholder="Password" />
         <button onclick="authDev()">Login</button>
