@@ -82,12 +82,12 @@
     <!-- Game Selection Menu -->
     <div id="menu">
         <h1>Select a Game</h1>
-        <button class="game-button" onclick="startGame('guessNumber')">Guess the Number</button>
+        <button class="game-button" onclick="startGame('guessNumber')">Guess The Number</button>
     </div>
 
     <!-- Game Container -->
     <div id="game-container">
-        <h1>Guess the Number</h1>
+        <h1>Guess The Number</h1>
         <p>Guess a number between 1 and 10!</p>
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
@@ -117,6 +117,7 @@
                 correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
                 document.getElementById('menu').style.display = 'none'; // Hide menu
                 document.getElementById('game-container').style.display = 'block'; // Show game
+                document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
             }
         }
 
@@ -181,7 +182,7 @@
         function resetGame() {
             correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
             document.getElementById("player-input").value = ""; // Clear input field
-            document.getElementById("reset-button").style.display = "none"; // Hide reset button
+            document.getElementById("reset-button").style.display = "inline-block"; // Show reset button
         }
     </script>
 
