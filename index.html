@@ -83,6 +83,7 @@
     <div id="menu">
         <h1>Select a Game</h1>
         <button class="game-button" onclick="startGame('guessNumber')">Guess The Number</button>
+        <button class="game-button" onclick="startGame('minecraft')">Minecraft</button> <!-- New Minecraft button -->
     </div>
 
     <!-- Game Container -->
@@ -91,8 +92,14 @@
         <p>Guess a number between 1 and 10!</p>
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
-        <!-- Always show Play Again button when game starts -->
         <button id="reset-button" onclick="resetGame()">Play Again</button>
+        <button id="back-button" onclick="goBack()">Back to Menu</button>
+    </div>
+
+    <!-- Minecraft Game Container (Placeholder) -->
+    <div id="minecraft-container">
+        <h1>Minecraft Game (Placeholder)</h1>
+        <p>This is a placeholder for the Minecraft game. Customize it later.</p>
         <button id="back-button" onclick="goBack()">Back to Menu</button>
     </div>
 
@@ -118,8 +125,12 @@
                 correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
                 document.getElementById('menu').style.display = 'none'; // Hide menu
                 document.getElementById('game-container').style.display = 'block'; // Show game
-                // Ensure Play Again button is always visible when game starts
-                document.getElementById('reset-button').style.display = 'inline-block'; 
+                document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
+            }
+            if (game === 'minecraft') {
+                // Display Minecraft placeholder content
+                document.getElementById('menu').style.display = 'none'; // Hide menu
+                document.getElementById('minecraft-container').style.display = 'block'; // Show Minecraft container
             }
         }
 
@@ -127,6 +138,7 @@
         function goBack() {
             document.getElementById('menu').style.display = 'block'; // Show menu
             document.getElementById('game-container').style.display = 'none'; // Hide game container
+            document.getElementById('minecraft-container').style.display = 'none'; // Hide Minecraft container
             document.getElementById('dev-container').style.display = 'none'; // Hide developer container
             resetGame(); // Reset the game state for next time
         }
