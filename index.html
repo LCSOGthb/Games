@@ -91,6 +91,7 @@
         <p>Guess a number between 1 and 10!</p>
         <input type="number" id="player-input" placeholder="Enter your guess" min="1" max="10">
         <button onclick="checkGuess()">Submit</button>
+        <!-- Always show Play Again button when game starts -->
         <button id="reset-button" onclick="resetGame()">Play Again</button>
         <button id="back-button" onclick="goBack()">Back to Menu</button>
     </div>
@@ -117,7 +118,8 @@
                 correctNumber = Math.floor(Math.random() * 10) + 1; // Initialize the game
                 document.getElementById('menu').style.display = 'none'; // Hide menu
                 document.getElementById('game-container').style.display = 'block'; // Show game
-                document.getElementById('reset-button').style.display = 'inline-block'; // Show Play Again button
+                // Ensure Play Again button is always visible when game starts
+                document.getElementById('reset-button').style.display = 'inline-block'; 
             }
         }
 
@@ -182,7 +184,7 @@
         function resetGame() {
             correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
             document.getElementById("player-input").value = ""; // Clear input field
-            document.getElementById("reset-button").style.display = "inline-block"; // Show reset button
+            document.getElementById("reset-button").style.display = "inline-block"; // Keep Play Again visible
         }
     </script>
 
