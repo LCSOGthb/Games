@@ -1,85 +1,160 @@
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-    }
-    #menu, #game-container, #dev-container, #minecraft-container {
-        display: none;
-        margin-top: 50px;
-    }
-    #menu {
-        display: block; /* Show the menu by default */
-    }
-    .game-button {
-        padding: 10px 20px;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background-color: #007BFF;
-        color: white;
-        margin: 10px;
-        transition: background-color 0.3s;
-    }
-    .game-button:hover {
-        background-color: #0056b3;
-    }
-    #back-button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        background-color: #FF5733;
-        color: white;
-        transition: background-color 0.3s;
-    }
-    #back-button:hover {
-        background-color: #C70039;
-    }
-    .dev-info {
-        margin-top: 20px;
-        padding: 10px;
-        font-size: 16px;
-        background-color: #ffffff; /* Light background for dev info */
-        color: #333;
-        border-radius: 5px;
-        text-align: left;
-        max-width: 600px;
-        margin: 20px auto;
-        overflow-wrap: break-word;
-    }
-    .dev-history {
-        background-color: #f5f5f5; /* Matches the current theme background */
-        border-radius: 5px;
-        margin-top: 10px;
-        padding: 15px;
-        color: #333; /* Dark text for readability */
-    }
-    .dev-history h3 {
-        margin-bottom: 10px;
-    }
-    .dev-history p {
-        font-size: 14px;
-        color: #666; /* Light color for history notes */
-        margin: 5px 0;
-    }
-    #dev-button {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        font-size: 14px;
-        color: #007BFF;
-        border: none;
-        background: none;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-    #dev-button:hover {
-        color: #0056b3;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Useless Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        #menu, #game-container, #dev-container, #minecraft-container {
+            display: none;
+            margin-top: 50px;
+        }
+        #menu {
+            display: block; /* Show the menu by default */
+        }
+        .game-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .game-button:hover {
+            background-color: #0056b3;
+        }
+        #back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF5733;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        #back-button:hover {
+            background-color: #C70039;
+        }
+        .dev-info {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ffffff; /* Light background for dev info */
+            color: #333;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow-wrap: break-word;
+        }
+        .dev-history {
+            background-color: #f5f5f5; /* Matches the current theme background */
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 15px;
+            color: #333; /* Dark text for readability */
+        }
+        .dev-history h3 {
+            margin-bottom: 10px;
+        }
+        .dev-history p {
+            font-size: 14px;
+            color: #666; /* Light color for history notes */
+            margin: 5px 0;
+        }
+        #dev-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 14px;
+            color: #007BFF;
+            border: none;
+            background: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #dev-button:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="menu">
+        <h1>Welcome to A Useless Website</h1>
+        <button class="game-button" onclick="startGuessTheNumber()">Guess The Number</button>
+        <button class="game-button" onclick="startMinecraft()">Minecraft</button>
+        <button id="dev-button" onclick="authDev()">Developer Mode</button>
+    </div>
+
+    <!-- Developer Container -->
+    <div id="dev-container">
+        <h2>Developer Mode</h2>
+        <div class="dev-info">
+            <h3>Developer Notes</h3>
+            <div class="dev-history">
+                <h3>History & Notes</h3>
+                <p>Developer Mode is enabled for testing purposes.</p>
+                <p>Remember to keep everything under wraps during development.</p>
+                <p>Check each update carefully.</p>
+            </div>
+        </div>
+        <button id="back-button" onclick="backToMenu()">Back to Menu</button>
+    </div>
+
+    <script>
+        // Developer authentication
+        function authDev() {
+            const password = prompt("Enter Developer Password:");
+            
+            if (password === null) {
+                // If the user clicks Cancel, return early to avoid showing the "Access Denied" message
+                return;
+            }
+
+            const devPassword = "LCSdev"; // Developer password
+
+            if (password === devPassword) {
+                alert("Access Granted! Welcome, Developer.");
+                showDevContainer();
+            } else {
+                alert("Access Denied! Incorrect password.");
+            }
+        }
+
+        // Show the developer container
+        function showDevContainer() {
+            document.getElementById('menu').style.display = 'none'; // Hide menu
+            document.getElementById('dev-container').style.display = 'block'; // Show developer container
+        }
+
+        // Go back to the main menu
+        function backToMenu() {
+            document.getElementById('menu').style.display = 'block'; // Show menu
+            document.getElementById('dev-container').style.display = 'none'; // Hide developer container
+        }
+
+        // Placeholder function to start Guess The Number
+        function startGuessTheNumber() {
+            alert("Guess The Number Game starting...");
+        }
+
+        // Placeholder function to start Minecraft
+        function startMinecraft() {
+            alert("Minecraft section starting...");
+        }
+    </script>
+</body>
+</html>
