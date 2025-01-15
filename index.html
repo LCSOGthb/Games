@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
         }
-        #menu, #game-container {
+        #menu, #game-container, #dev-container {
             display: none;
             margin-top: 50px;
         }
@@ -47,21 +47,31 @@
         #back-button:hover {
             background-color: #C70039;
         }
-        #clown-image {
-            display: none;
-            margin: 20px auto;
-            width: 300px;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        #reset-button {
-            display: none;
+        .dev-info {
             margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #222;
+            color: white;
+            border-radius: 5px;
+            text-align: left;
+            max-width: 600px;
+            margin: 20px auto;
+            overflow-wrap: break-word;
+        }
+        #dev-button {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 14px;
+            color: #007BFF;
+            border: none;
+            background: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #dev-button:hover {
+            color: #0056b3;
         }
     </style>
 </head>
@@ -70,7 +80,6 @@
     <div id="menu">
         <h1>Select a Game</h1>
         <button class="game-button" onclick="startGame('guessNumber')">Guess the Number</button>
-        <button class="game-button" onclick="alert('More games coming soon!')">Other Game</button>
     </div>
 
     <!-- Game Container -->
@@ -82,7 +91,19 @@
         <button id="reset-button" onclick="resetGame()">Play Again</button>
         <button id="back-button" onclick="goBack()">Back to Menu</button>
     </div>
-    <img id="clown-image" src="images.jpg" alt="Clown image as punishment for a wrong guess.">
+
+    <!-- Developer Container -->
+    <div id="dev-container">
+        <h1>Developer Mode</h1>
+        <p>Welcome, Developer! Here's your exclusive information:</p>
+        <div class="dev-info" id="dev-info">
+            <!-- Developer-only information -->
+        </div>
+        <button id="back-button" onclick="goBack()">Back to Menu</button>
+    </div>
+
+    <!-- Developer Mode Button -->
+    <button id="dev-button" onclick="authDev()">Developer Mode</button>
 
     <script>
         let correctNumber;
@@ -98,9 +119,40 @@
 
         // Back to the menu
         function goBack() {
-            document.getElementById('game-container').style.display = 'none'; // Hide game container
             document.getElementById('menu').style.display = 'block'; // Show menu
+            document.getElementById('game-container').style.display = 'none'; // Hide game container
+            document.getElementById('dev-container').style.display = 'none'; // Hide developer container
             resetGame(); // Reset the game state for next time
+        }
+
+        // Developer authentication
+        function authDev() {
+            const password = prompt("Enter Developer Password:");
+            const devPassword = "dev123"; // Replace with a more secure password or hash
+
+            if (password === devPassword) {
+                alert("Access Granted! Welcome, Developer.");
+                showDevContainer();
+            } else {
+                alert("Access Denied! Incorrect password.");
+            }
+        }
+
+        // Show the developer container
+        function showDevContainer() {
+            document.getElementById('menu').style.display = 'none'; // Hide menu
+            document.getElementById('dev-container').style.display = 'block'; // Show developer container
+
+            const devInfo = document.getElementById('dev-info');
+            devInfo.innerHTML = `
+                <strong>Game State:</strong><br>
+                Correct Number: ${correctNumber || "N/A"}<br>
+                Current Time: ${new Date().toLocaleString()}<br>
+                <strong>Notes:</strong><br>
+                - Add more games to the menu.<br>
+                - Optimize game logic.<br>
+                - Ensure responsive design compatibility.
+            `;
         }
 
         function checkGuess() {
@@ -117,9 +169,7 @@
             if (playerGuess === correctNumber) {
                 alert("Congratulations! You guessed it!");
             } else {
-                alert(`Wrong guess! The correct number was ${correctNumber}. Here's your punishment.`);
-                clownImage.style.display = "block";
-                clownImage.style.opacity = "1";
+                alert(`Wrong guess! The correct number was ${correctNumber}.`);
             }
 
             resetButton.style.display = "inline-block"; // Show reset button
@@ -128,9 +178,6 @@
         function resetGame() {
             correctNumber = Math.floor(Math.random() * 10) + 1; // Generate a new number
             document.getElementById("player-input").value = ""; // Clear input field
-            const clownImage = document.getElementById("clown-image");
-            clownImage.style.display = "none"; // Hide clown image
-            clownImage.style.opacity = "0"; // Reset opacity
             document.getElementById("reset-button").style.display = "none"; // Hide reset button
         }
     </script>
