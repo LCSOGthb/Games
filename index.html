@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loginScreen" class="login-container">
+    <div id="mainContent" class="container">
+        <h1>Welcome to An Useless Website</h1>
+        <button id="uselessButton">Click Me for No Reason</button>
+        <p id="uselessText"></p>
+    </div>
+
+    <div id="loginScreen" class="login-container" style="display: none;">
         <h2>Enter Developer Mode</h2>
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
@@ -15,11 +21,8 @@
         <p id="errorMessage" class="error-message"></p>
     </div>
 
-    <div id="mainContent" class="container" style="display: none;">
-        <h1>Welcome to An Useless Website</h1>
-        <button id="uselessButton">Click Me for No Reason</button>
-        <p id="uselessText"></p>
-    </div>
+    <!-- Developer Mode Button -->
+    <button id="devModeButton" class="dev-mode-button">Developer Mode</button>
 
     <script src="script.js"></script>
 </body>
