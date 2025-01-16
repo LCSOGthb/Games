@@ -16,6 +16,9 @@ CodeClimate:
 Codacy:
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
+CircleCI:
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/RHrNWGk2MzsmewtzbbFmPY/GC5Vyt4aQ2N6LRPksKEQG2/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/RHrNWGk2MzsmewtzbbFmPY/GC5Vyt4aQ2N6LRPksKEQG2/tree/main)
+
 Snyk:
 [![Known Vulnerabilities](https://snyk.io/test/github/LCSOGthb/Games/badge.svg)](https://snyk.io/test/github/LCSOGthb/Games)
 
