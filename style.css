@@ -71,3 +71,10 @@ input {
     font-size: 1.2em;
     color: #555;
 }
+
+/* Remove background and styling for dev mode */
+body.dev-mode {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
