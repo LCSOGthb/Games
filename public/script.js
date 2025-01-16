@@ -1,8 +1,10 @@
-document.getElementById("devModeButton").addEventListener("click", function() {
-    document.getElementById("loginScreen").style.display = "flex";  // Show login screen as overlay
+// Show the Developer Mode login screen
+document.getElementById("devModeButton").addEventListener("click", function () {
+    document.getElementById("loginScreen").style.display = "flex";
 });
 
-document.getElementById("loginButton").addEventListener("click", function() {
+// Handle login button click
+document.getElementById("loginButton").addEventListener("click", function () {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
@@ -14,23 +16,32 @@ document.getElementById("loginButton").addEventListener("click", function() {
         },
         body: JSON.stringify({ username, password }),
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            // Hide the login screen and apply developer mode styling
-            document.getElementById("loginScreen").style.display = "none";
-            document.body.classList.add("dev-mode");
-        } else {
-            // Show an error message if credentials are incorrect
-            document.getElementById("errorMessage").textContent = data.message;
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                // Hide the login screen and activate developer mode
+                document.getElementById("loginScreen").style.display = "none";
+                document.body.classList.add("dev-mode");
+            } else {
+                // Show error message
+                document.getElementById("errorMessage").textContent = data.message;
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
 
-document.getElementById("uselessButton").addEventListener("click", function() {
-    const text = document.getElementById("uselessText");
-    text.textContent = "You clicked the button... for no reason!";
+// Handle back button click
+document.getElementById("backButton").addEventListener("click", function () {
+    // Ensure the login screen is hidden
+    const loginScreen = document.getElementById("loginScreen");
+    if (loginScreen) {
+        loginScreen.style.display = "none"; // Hide the login screen
+    }
+
+    // Reset the login form
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("errorMessage").textContent = "";
 });
