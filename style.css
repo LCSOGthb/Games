@@ -12,6 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    position: relative;
 }
 
 .container {
@@ -70,6 +71,24 @@ input {
     margin-top: 20px;
     font-size: 1.2em;
     color: #555;
+}
+
+/* Developer Mode Button Styling */
+.dev-mode-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dev-mode-button:hover {
+    background-color: #e31a1a;
 }
 
 /* Remove background and styling for dev mode */
