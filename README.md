@@ -1,4 +1,4 @@
-![Lines of Code](https://img.shields.io/tokei/lines/github/LCSOGthb/Games)
+[![Lines Of Code](https://tokei.rs/b1/github/XAMPPRocky/tokei)](https://github.com/XAMPPRocky/tokei).
 ![Repo Size](https://img.shields.io/github/repo-size/LCSOGthb/Games)
 ![Last Commit](https://img.shields.io/github/last-commit/LCSOGthb/Games)
 ![Open Issues](https://img.shields.io/github/issues/LCSOGthb/Games)
