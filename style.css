@@ -29,6 +29,13 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    display: none;
+    z-index: 10;
 }
 
 h1, h2 {
@@ -85,15 +92,34 @@ input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 20;
 }
 
 .dev-mode-button:hover {
     background-color: #e31a1a;
 }
 
-/* Remove background and styling for dev mode */
+/* Overlay Styling */
 body.dev-mode {
     background-color: transparent;
     margin: 0;
     padding: 0;
+}
+
+body.dev-mode #loginScreen {
+    display: block;
+}
+
+#loginScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
 }
