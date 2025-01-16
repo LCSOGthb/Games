@@ -1,106 +1,33 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-body {
-    font-family: Arial, sans-serif;
+/* Dark Mode Button Styles */
+.dark-mode-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
     background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    position: relative;
-}
-
-/* The login overlay will cover the entire screen */
-#loginScreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: none; /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    backdrop-filter: blur(5px); /* Optional: add blur effect */
-}
-
-/* Container for the login form */
-.login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-    z-index: 1000; /* Ensures it's above the overlay */
-}
-
-/* Styling for login form elements */
-input {
-    padding: 10px;
-    font-size: 1em;
-    margin: 10px;
-    width: 80%;
-    max-width: 300px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: #008CBA;
-    color: white;
+    color: #121212;
     border: none;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: #005f6b;
-}
-
-/* Developer Mode Button Styling */
-.dev-mode-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #f44336;
-    color: white;
-    border: none;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dev-mode-button:hover {
-    background-color: #e31a1a;
+.dark-mode-button:hover {
+    background-color: #e0e0e0;
 }
 
-/* The text showing the useless button click message */
-#uselessText {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #555;
+body.dark-mode .dark-mode-button {
+    background-color: #333333;
+    color: #ffffff;
 }
 
-/* Developer mode styling when it's activated */
-body.dev-mode {
-    background-color: transparent;
-}
-
-/* Error message when invalid login attempt */
-.error-message {
-    color: red;
-    font-size: 1em;
-    margin-top: 10px;
+body.dark-mode .dark-mode-button:hover {
+    background-color: #444444;
 }
