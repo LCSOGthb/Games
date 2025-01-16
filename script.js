@@ -7,6 +7,9 @@ document.getElementById("loginButton").addEventListener("click", function() {
         // Hide the login screen and show the main content
         document.getElementById("loginScreen").style.display = "none";
         document.getElementById("mainContent").style.display = "block";
+        
+        // Apply dev mode styling
+        document.body.classList.add("dev-mode");
     } else {
         // Show an error message if credentials are incorrect
         document.getElementById("errorMessage").textContent = "Incorrect username or password!";
