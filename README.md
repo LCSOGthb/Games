@@ -9,6 +9,10 @@
 ![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/LCSOGthb/Games/main)
 
+CodeClimate:
+[![Maintainability](https://api.codeclimate.com/v1/badges/747d7f776d92873d7308/maintainability)](https://codeclimate.com/github/LCSOGthb/Games/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/747d7f776d92873d7308/test_coverage)](https://codeclimate.com/github/LCSOGthb/Games/test_coverage)
+
 Codacy:
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
