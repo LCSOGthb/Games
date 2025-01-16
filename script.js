@@ -1,14 +1,17 @@
+// Show Developer Mode login screen when the Developer Mode button is clicked
+document.getElementById("devModeButton").addEventListener("click", function() {
+    document.getElementById("loginScreen").style.display = "block";  // Show login screen
+});
+
+// Login button functionality to enable developer mode
 document.getElementById("loginButton").addEventListener("click", function() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     // Check if the entered credentials are correct
     if (username === "LCSdev" && password === "LCSdev") {
-        // Hide the login screen and show the main content
+        // Hide the login screen and apply developer mode styling
         document.getElementById("loginScreen").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
-        
-        // Apply dev mode styling
         document.body.classList.add("dev-mode");
     } else {
         // Show an error message if credentials are incorrect
@@ -16,6 +19,7 @@ document.getElementById("loginButton").addEventListener("click", function() {
     }
 });
 
+// Useless button interaction
 document.getElementById("uselessButton").addEventListener("click", function() {
     const text = document.getElementById("uselessText");
     text.textContent = "You clicked the button... for no reason!";
