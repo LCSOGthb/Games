@@ -6,3 +6,4 @@
 ![Open Issues](https://img.shields.io/github/issues/LCSOGthb/Games)
 ![Closed Issues](https://img.shields.io/github/issues-closed/LCSOGthb/Games)
 ![Pull Requests](https://img.shields.io/github/issues-pr/LCSOGthb/Games)
+![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
