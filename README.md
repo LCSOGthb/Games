@@ -2,7 +2,7 @@
 ![Repo Size](https://img.shields.io/github/repo-size/LCSOGthb/Games)
 ![Last Commit](https://img.shields.io/github/last-commit/LCSOGthb/Games)
 ![Pull Requests](https://img.shields.io/github/LCSOGthb/Games)
-![GitHub pull request status](https://img.shields.io/github/status/s/pulls/LCSOGthb/Games/number)
+![GitHub pull request status](https://img.shields.io/github/status/s/pulls/LCSOGthb/Games/:number)
 ![Open Issues](https://img.shields.io/github/issues/LCSOGthb/Games)
 ![Closed Issues](https://img.shields.io/github/issues-closed/LCSOGthb/Games)
 ![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/LCSOGthb/Games)
