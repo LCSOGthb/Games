@@ -4,3 +4,4 @@
 ![Open Issues](https://img.shields.io/github/issues/LCSOGthb/Games)
 ![Closed Issues](https://img.shields.io/github/issues-closed/LCSOGthb/Games)
 ![Open Pull Requests](https://img.shields.io/github/pulls/LCSOGthb/Games)
+![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/LCSOGthb/Games)
