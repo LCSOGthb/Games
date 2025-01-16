@@ -1,5 +1,6 @@
 ![Lines Of Code](https://tokei.rs/b1/github/LCSOGthb/Games)
 ![Repo Size](https://img.shields.io/github/repo-size/LCSOGthb/Games)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/:variant/LCSOGthb/Games)
 ![Last Commit](https://img.shields.io/github/last-commit/LCSOGthb/Games)
 ![Open Issues](https://img.shields.io/github/issues/LCSOGthb/Games)
 ![Closed Issues](https://img.shields.io/github/issues-closed/LCSOGthb/Games)
