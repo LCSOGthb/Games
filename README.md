@@ -9,8 +9,7 @@
 ![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/LCSOGthb/Games/main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-<a href="https://snyk.io/test/github/LCSOGthb/Games?targetFile=build.gradle"><img src="https://snyk.io/test/github/LCSOGthb/Games/badge.svg?targetFile=build.gradle" alt="Known Vulnerabilities"/></a>
-![Known Vulnerabilities](https://snyk.io/test/github/LCSOGthb/Games/badge.svg)](https://snyk.io/test/github/LCSOGthb/Games)
+[![Known Vulnerabilities](https://snyk.io/test/github/LCSOGthb/Games/badge.svg)](https://snyk.io/test/github/LCSOGthb/Games)
 
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
