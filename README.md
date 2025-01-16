@@ -8,3 +8,4 @@
 ![Pull Requests](https://img.shields.io/github/issues-pr/LCSOGthb/Games)
 ![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/LCSOGthb/Games/main)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
