@@ -1,6 +1,6 @@
 // Show Developer Mode login screen when the Developer Mode button is clicked
 document.getElementById("devModeButton").addEventListener("click", function() {
-    document.getElementById("loginScreen").style.display = "block";  // Show login screen
+    document.getElementById("loginScreen").style.display = "flex";  // Show login screen as overlay
 });
 
 // Login button functionality to enable developer mode
