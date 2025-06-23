@@ -46,3 +46,16 @@ Scrutinizer
 [![Code Coverage](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/?branch=main)
 [![Build Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/build.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/build-status/main)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
+
+SonarQube
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=bugs)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=coverage)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
