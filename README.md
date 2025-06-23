@@ -37,3 +37,6 @@ OSSF
 Qlty
 [![Maintainability](https://qlty.sh/badges/7f71c7d1-f72e-406c-9fac-b8a3d2852be6/maintainability.svg)](https://qlty.sh/gh/LCSOGthb/projects/Games)
 [![Code Coverage](https://qlty.sh/badges/7f71c7d1-f72e-406c-9fac-b8a3d2852be6/test_coverage.svg)](https://qlty.sh/gh/LCSOGthb/projects/Games)
+
+Scrutinizer
+![Scrutinizer quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/LCSOGthb/Games)
