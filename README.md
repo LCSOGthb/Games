@@ -8,6 +8,8 @@
 ![Pull Requests](https://img.shields.io/github/issues-pr/LCSOGthb/Games)
 ![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/LCSOGthb/Games/main)
+![GitHub language count](https://img.shields.io/github/languages/count/LCSOGthb/Games)
+![GitHub top language](https://img.shields.io/github/languages/top/LCSOGthb/Games)
 
 CodeClimate:
 [![Maintainability](https://api.codeclimate.com/v1/badges/747d7f776d92873d7308/maintainability)](https://codeclimate.com/github/LCSOGthb/Games/maintainability)
