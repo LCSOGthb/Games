@@ -11,33 +11,17 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/LCSOGthb/Games)
 ![GitHub top language](https://img.shields.io/github/languages/top/LCSOGthb/Games)
 
-CodeClimate:
-[![Maintainability](https://api.codeclimate.com/v1/badges/747d7f776d92873d7308/maintainability)](https://codeclimate.com/github/LCSOGthb/Games/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/747d7f776d92873d7308/test_coverage)](https://codeclimate.com/github/LCSOGthb/Games/test_coverage)
+CodeRabbit
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/LCSOGthb/Games?utm_source=oss&utm_medium=github&utm_campaign=LCSOGthb%2FGames&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 
-Codacy:
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+CodeFactor
+[![CodeFactor](https://www.codefactor.io/repository/github/lcsogthb/games/badge)](https://www.codefactor.io/repository/github/lcsogthb/games)
 
-CircleCI:
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/RHrNWGk2MzsmewtzbbFmPY/GC5Vyt4aQ2N6LRPksKEQG2/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/RHrNWGk2MzsmewtzbbFmPY/GC5Vyt4aQ2N6LRPksKEQG2/tree/main)
+Codacy
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com/gh/LCSOGthb/Games/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
-Snyk:
-[![Known Vulnerabilities](https://snyk.io/test/github/LCSOGthb/Games/badge.svg)](https://snyk.io/test/github/LCSOGthb/Games)
+Codecov
+[![codecov](https://codecov.io/github/LCSOGthb/Games/graph/badge.svg?token=YH1MJBD9W4)](https://codecov.io/github/LCSOGthb/Games)
 
-SonarQube Cloud:
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=bugs)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=coverage)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
-
-For the Badge:
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-js.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+CircleCI
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/LCSOGthb/Games/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LCSOGthb/Games/tree/main)
