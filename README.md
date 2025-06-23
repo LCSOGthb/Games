@@ -25,3 +25,8 @@ Codecov
 
 CircleCI
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/LCSOGthb/Games/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/LCSOGthb/Games/tree/main)
+
+DeepSource
+[![DeepSource](https://app.deepsource.com/gh/LCSOGthb/Games.svg/?label=code+coverage&show_trend=true&token=hwz7sl1scY_nigBpYJUL0l8N)](https://app.deepsource.com/gh/LCSOGthb/Games/)
+[![DeepSource](https://app.deepsource.com/gh/LCSOGthb/Games.svg/?label=active+issues&show_trend=true&token=hwz7sl1scY_nigBpYJUL0l8N)](https://app.deepsource.com/gh/LCSOGthb/Games/)
+[![DeepSource](https://app.deepsource.com/gh/LCSOGthb/Games.svg/?label=resolved+issues&show_trend=true&token=hwz7sl1scY_nigBpYJUL0l8N)](https://app.deepsource.com/gh/LCSOGthb/Games/)
