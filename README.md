@@ -42,4 +42,7 @@ Snyk
 [![Known Vulnerabilities](https://snyk.io/test/github/LCSOGthb/Games/badge.svg)](https://snyk.io/test/github/LCSOGthb/Games)
 
 Scrutinizer
-![Scrutinizer quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/LCSOGthb/Games)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/?branch=main)
+[![Code Coverage](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/?branch=main)
+[![Build Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/build.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/build-status/main)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
