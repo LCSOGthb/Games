@@ -175,3 +175,18 @@ body::after {
   position: relative;
   z-index: 2;
 }
+
+.version-label {
+  position: fixed;
+  right: 18px;
+  bottom: 12px;
+  color: #fff;
+  background: transparent; /* Changed from rgba(65, 88, 208, 0.85) */
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 0.98em;
+  z-index: 100;
+  box-shadow: none; /* Remove box-shadow for full transparency */
+  pointer-events: none;
+  user-select: none;
+}

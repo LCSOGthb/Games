@@ -73,11 +73,13 @@
         <div class="name" id="coming-soon">Coming Soon</div>
       </div>
     </div>
+    <div class="version-label" id="version-label">Version: Alpha 0.3</div>
     <script>
   const enBtn = document.getElementById('en-btn');
   const zhBtn = document.getElementById('zh-btn');
   const mainText = document.getElementById('main-text');
   const comingSoon = document.getElementById('coming-soon');
+  const versionLabel = document.getElementById('version-label');
 
   function setLanguage(lang) {
     if (lang === 'zh') {
@@ -85,11 +87,13 @@
       comingSoon.textContent = "敬请期待";
       zhBtn.classList.add('active');
       enBtn.classList.remove('active');
+      versionLabel.textContent = "版本: 最初 0.3";
     } else {
       mainText.textContent = "Making the website";
       comingSoon.textContent = "Coming Soon";
       enBtn.classList.add('active');
       zhBtn.classList.remove('active');
+      versionLabel.textContent = "Version: Alpha 0.3";
     }
     // Save language choice
     localStorage.setItem('siteLang', lang);
