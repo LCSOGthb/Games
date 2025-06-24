@@ -91,6 +91,21 @@
         zhBtn.classList.add('active');
         enBtn.classList.remove('active');
       };
+
+      function getRandomColor() {
+          // Generate a random hex color
+          return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+      }
+
+      function setRandomGradient() {
+          const colors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
+          document.body.style.background = `linear-gradient(-45deg, ${colors.join(', ')})`;
+          document.body.style.backgroundSize = "400% 400%";
+          document.body.style.animation = "gradient 15s ease infinite";
+      }
+
+      // Run on page load
+      setRandomGradient();
     </script>
 </body>
 </html>
