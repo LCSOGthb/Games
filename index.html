@@ -40,6 +40,8 @@
     </style>
 </head>
 <body>
+  <div class="gradient-bg" id="gradient-bg"></div>
+  <div class="gradient-fade" id="gradient-fade"></div>
   <div class="lang-switcher">
         <button class="active" id="en-btn">English</button>
         <button id="zh-btn">中文</button>
@@ -73,13 +75,15 @@
         <div class="name" id="coming-soon">Coming Soon</div>
       </div>
     </div>
-    <div class="version-label" id="version-label">Version: Alpha 0.3</div>
+    <div class="version-label" id="version-label">Version: Alpha 0.6</div>
     <script>
   const enBtn = document.getElementById('en-btn');
   const zhBtn = document.getElementById('zh-btn');
   const mainText = document.getElementById('main-text');
   const comingSoon = document.getElementById('coming-soon');
   const versionLabel = document.getElementById('version-label');
+  const bgDiv = document.getElementById('gradient-bg');
+  const fadeDiv = document.getElementById('gradient-fade');
 
   function setLanguage(lang) {
     if (lang === 'zh') {
@@ -87,13 +91,13 @@
       comingSoon.textContent = "敬请期待";
       zhBtn.classList.add('active');
       enBtn.classList.remove('active');
-      versionLabel.textContent = "版本: 最初 0.3";
+      versionLabel.textContent = "版本: 最初 0.6";
     } else {
       mainText.textContent = "Making the website";
       comingSoon.textContent = "Coming Soon";
       enBtn.classList.add('active');
       zhBtn.classList.remove('active');
-      versionLabel.textContent = "Version: Alpha 0.3";
+      versionLabel.textContent = "Version: Alpha 0.6";
     }
     // Save language choice
     localStorage.setItem('siteLang', lang);
@@ -110,20 +114,47 @@
   const savedLang = localStorage.getItem('siteLang');
   setLanguage(savedLang === 'zh' ? 'zh' : 'en');
 
-  function getRandomColor() {
-      // Generate a random hex color
-      return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-  }
+  function getUniqueRandomColors(count) {
+    const colors = new Set();
+    while (colors.size < count) {
+        colors.add('#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0'));
+    }
+    return Array.from(colors);
+}
 
-  function setRandomGradient() {
-      const colors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
-      document.body.style.background = `linear-gradient(-45deg, ${colors.join(', ')})`;
-      document.body.style.backgroundSize = "400% 400%";
-      document.body.style.animation = "gradient 15s ease infinite";
-  }
+function setRandomGradient(smooth = false) {
+    const colors = getUniqueRandomColors(4);
+    const newGradient = `linear-gradient(-45deg, ${colors.join(', ')})`;
 
-  // Run on page load
-  setRandomGradient();
+    if (smooth) {
+        // Set overlay to new gradient and fade in
+        fadeDiv.style.backgroundImage = newGradient;
+        fadeDiv.style.opacity = '1';
+        // Restart animation for fadeDiv
+        fadeDiv.style.animation = 'none';
+        void fadeDiv.offsetWidth; // force reflow
+        fadeDiv.style.animation = '';
+        setTimeout(() => {
+            // After fade, set bgDiv to new gradient and fade out overlay
+            bgDiv.style.backgroundImage = newGradient;
+            bgDiv.style.animation = 'none';
+            void bgDiv.offsetWidth;
+            bgDiv.style.animation = '';
+            fadeDiv.style.opacity = '0';
+        }, 1500); // Match transition duration
+    } else {
+        bgDiv.style.backgroundImage = newGradient;
+        bgDiv.style.animation = 'none';
+        void bgDiv.offsetWidth;
+        bgDiv.style.animation = '';
+    }
+}
+
+// Run on page load
+setRandomGradient();
+
+// Refresh gradient every 15 seconds with smooth transition
+setInterval(() => setRandomGradient(true), 15000);
 </script>
 </body>
 </html>

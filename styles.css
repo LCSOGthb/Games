@@ -190,3 +190,25 @@ body::after {
   pointer-events: none;
   user-select: none;
 }
+
+.gradient-bg,
+.gradient-fade {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  transition: opacity 1.5s;
+}
+
+.gradient-bg {
+  opacity: 1;
+}
+
+.gradient-fade {
+  opacity: 0;
+  background: transparent;
+}
