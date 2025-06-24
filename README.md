@@ -32,7 +32,7 @@ DeepSource
 [![DeepSource](https://app.deepsource.com/gh/LCSOGthb/Games.svg/?label=resolved+issues&show_trend=true&token=hwz7sl1scY_nigBpYJUL0l8N)](https://app.deepsource.com/gh/LCSOGthb/Games/)
 
 OSSF
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/LCSOGthb/Games/badge)](https://scorecard.dev/viewer/?uri=github.com/LCSOGthb/Games)
+![OSSF-Scorecard Score](https://img.shields.io/ossf-scorecard/github.com/LCSOGthb/Tools)
 
 Qlty
 [![Maintainability](https://qlty.sh/badges/7f71c7d1-f72e-406c-9fac-b8a3d2852be6/maintainability.svg)](https://qlty.sh/gh/LCSOGthb/projects/Games)
