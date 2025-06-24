@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-    <div class="lang-switcher">
+  <div class="lang-switcher">
         <button class="active" id="en-btn">English</button>
         <button id="zh-btn">中文</button>
     </div>
@@ -74,38 +74,52 @@
       </div>
     </div>
     <script>
-      const enBtn = document.getElementById('en-btn');
-      const zhBtn = document.getElementById('zh-btn');
-      const mainText = document.getElementById('main-text');
-      const comingSoon = document.getElementById('coming-soon');
+  const enBtn = document.getElementById('en-btn');
+  const zhBtn = document.getElementById('zh-btn');
+  const mainText = document.getElementById('main-text');
+  const comingSoon = document.getElementById('coming-soon');
 
-      enBtn.onclick = function() {
-        mainText.textContent = "Making the website";
-        comingSoon.textContent = "Coming Soon";
-        enBtn.classList.add('active');
-        zhBtn.classList.remove('active');
-      };
-      zhBtn.onclick = function() {
-        mainText.textContent = "网站建设中";
-        comingSoon.textContent = "敬请期待";
-        zhBtn.classList.add('active');
-        enBtn.classList.remove('active');
-      };
+  function setLanguage(lang) {
+    if (lang === 'zh') {
+      mainText.textContent = "网站建设中";
+      comingSoon.textContent = "敬请期待";
+      zhBtn.classList.add('active');
+      enBtn.classList.remove('active');
+    } else {
+      mainText.textContent = "Making the website";
+      comingSoon.textContent = "Coming Soon";
+      enBtn.classList.add('active');
+      zhBtn.classList.remove('active');
+    }
+    // Save language choice
+    localStorage.setItem('siteLang', lang);
+  }
 
-      function getRandomColor() {
-          // Generate a random hex color
-          return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-      }
+  enBtn.onclick = function() {
+    setLanguage('en');
+  };
+  zhBtn.onclick = function() {
+    setLanguage('zh');
+  };
 
-      function setRandomGradient() {
-          const colors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
-          document.body.style.background = `linear-gradient(-45deg, ${colors.join(', ')})`;
-          document.body.style.backgroundSize = "400% 400%";
-          document.body.style.animation = "gradient 15s ease infinite";
-      }
+  // On page load, check for saved language
+  const savedLang = localStorage.getItem('siteLang');
+  setLanguage(savedLang === 'zh' ? 'zh' : 'en');
 
-      // Run on page load
-      setRandomGradient();
-    </script>
+  function getRandomColor() {
+      // Generate a random hex color
+      return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+  }
+
+  function setRandomGradient() {
+      const colors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
+      document.body.style.background = `linear-gradient(-45deg, ${colors.join(', ')})`;
+      document.body.style.backgroundSize = "400% 400%";
+      document.body.style.animation = "gradient 15s ease infinite";
+  }
+
+  // Run on page load
+  setRandomGradient();
+</script>
 </body>
 </html>
