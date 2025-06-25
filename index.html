@@ -76,7 +76,7 @@
         <div class="name" id="coming-soon">Coming Soon</div>
       </div>
     </div>
-    <div class="version-label" id="version-label">Version: Alpha 0.19</div>
+    <div class="version-label" id="version-label">Version: Alpha 0.26</div>
     <script>
   const enBtn = document.getElementById('en-btn');
   const zhBtn = document.getElementById('zh-btn');
@@ -92,13 +92,13 @@
       comingSoon.textContent = "敬请期待";
       zhBtn.classList.add('active');
       enBtn.classList.remove('active');
-      versionLabel.textContent = "版本: 最初 0.19";
+      versionLabel.textContent = "版本: 最初 0.26";
     } else {
       mainText.textContent = "Making the website";
       comingSoon.textContent = "Coming Soon";
       enBtn.classList.add('active');
       zhBtn.classList.remove('active');
-      versionLabel.textContent = "Version: Alpha 0.19";
+      versionLabel.textContent = "Version: Alpha 0.26";
     }
     // Save language choice
     localStorage.setItem('siteLang', lang);
