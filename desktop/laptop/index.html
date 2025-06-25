@@ -38,6 +38,7 @@
             border-color: #4158D0;
         }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <div class="gradient-bg" id="gradient-bg"></div>
@@ -75,7 +76,7 @@
         <div class="name" id="coming-soon">Coming Soon</div>
       </div>
     </div>
-    <div class="version-label" id="version-label">Version: Alpha 0.6</div>
+    <div class="version-label" id="version-label">Version: Alpha 0.9</div>
     <script>
   const enBtn = document.getElementById('en-btn');
   const zhBtn = document.getElementById('zh-btn');
@@ -91,13 +92,13 @@
       comingSoon.textContent = "敬请期待";
       zhBtn.classList.add('active');
       enBtn.classList.remove('active');
-      versionLabel.textContent = "版本: 最初 0.6";
+      versionLabel.textContent = "版本: 最初 0.9";
     } else {
       mainText.textContent = "Making the website";
       comingSoon.textContent = "Coming Soon";
       enBtn.classList.add('active');
       zhBtn.classList.remove('active');
-      versionLabel.textContent = "Version: Alpha 0.6";
+      versionLabel.textContent = "Version: Alpha 0.9";
     }
     // Save language choice
     localStorage.setItem('siteLang', lang);
@@ -110,9 +111,21 @@
     setLanguage('zh');
   };
 
-  // On page load, check for saved language
+  // On page load, check for saved language or detect browser language
   const savedLang = localStorage.getItem('siteLang');
-  setLanguage(savedLang === 'zh' ? 'zh' : 'en');
+  if (savedLang) {
+    setLanguage(savedLang === 'zh' ? 'zh' : 'en');
+  } else {
+    // Detect browser language
+    const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (browserLang.startsWith('zh')) {
+      setLanguage('zh');
+      localStorage.setItem('siteLang', 'zh');
+    } else {
+      setLanguage('en');
+      localStorage.setItem('siteLang', 'en');
+    }
+  }
 
   function getUniqueRandomColors(count) {
     const colors = new Set();
@@ -155,6 +168,24 @@ setRandomGradient();
 
 // Refresh gradient every 15 seconds with smooth transition
 setInterval(() => setRandomGradient(true), 15000);
+
+// Detect device type
+function getDeviceType() {
+  const ua = navigator.userAgent;
+  if (/Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(ua)) {
+    return 'mobile';
+  }
+  return 'desktop';
+}
+
+const deviceType = getDeviceType();
+if (deviceType === 'desktop') {
+  document.body.classList.add('desktop');
+  // Desktop-specific JS here
+} else {
+  document.body.classList.add('mobile');
+  // Mobile/tablet-specific JS here
+}
 </script>
 </body>
 </html>

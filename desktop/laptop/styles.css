@@ -212,3 +212,36 @@ body::after {
   opacity: 0;
   background: transparent;
 }
+
+/* Example: styles.css */
+@media (max-width: 600px) {
+  /* Styles for phones */
+  .e-card {
+    width: 95vw;
+    height: auto;
+    margin: 40px auto;
+  }
+  .version-label {
+    font-size: 0.85em;
+    padding: 4px 10px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for tablets */
+  .e-card {
+    width: 70vw;
+    height: auto;
+    margin: 60px auto;
+  }
+}
+
+body.desktop .e-card {
+  /* Desktop-specific styles (optional) */
+}
+
+body.mobile .e-card {
+  /* Mobile/tablet-specific styles (optional) */
+}
