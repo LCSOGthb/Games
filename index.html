@@ -76,7 +76,12 @@
         <div class="name" id="coming-soon">Coming Soon</div>
       </div>
     </div>
-    <div class="version-label" id="version-label">Version: Alpha 0.26</div>
+    <div class="version-label" id="version-label">Version: Alpha 0.30</div>
+    <!-- From Uiverse.io by alexruix --> 
+<div class="input-group bottom-left">
+  <input required="" type="text" name="text" autocomplete="off" class="input">
+  <label class="user-label">First Name</label>
+</div>
     <script>
   const enBtn = document.getElementById('en-btn');
   const zhBtn = document.getElementById('zh-btn');
@@ -92,13 +97,13 @@
       comingSoon.textContent = "敬请期待";
       zhBtn.classList.add('active');
       enBtn.classList.remove('active');
-      versionLabel.textContent = "版本: 最初 0.26";
+      versionLabel.textContent = "版本: 最初 0.30";
     } else {
       mainText.textContent = "Making the website";
       comingSoon.textContent = "Coming Soon";
       enBtn.classList.add('active');
       zhBtn.classList.remove('active');
-      versionLabel.textContent = "Version: Alpha 0.26";
+      versionLabel.textContent = "Version: Alpha 0.30";
     }
     // Save language choice
     localStorage.setItem('siteLang', lang);
@@ -172,7 +177,7 @@ setInterval(() => setRandomGradient(true), 15000);
 // Detect device type
 function getDeviceType() {
   const ua = navigator.userAgent;
-  if (/Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(ua)) {
+  if (/Mobile|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop|Chrome|Brave|Firefox/i.test(ua)) {
     return 'mobile';
   }
   return 'desktop';
