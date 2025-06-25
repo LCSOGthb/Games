@@ -23,8 +23,10 @@ const setRoutes = require('./routes/index');
 // Initialize routes
 setRoutes(app);
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+// REMOVE or COMMENT OUT the following lines for Vercel:
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`Server is running on http://localhost:${PORT}`);
+// });
+
+module.exports = app;

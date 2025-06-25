@@ -1,4 +1,3 @@
-const express = require("express");
-const app = express();
-app.get("/", (req, res) => res.send("Hello from Express on Vercel"));
+const app = require('../src/app');
+
 module.exports = app;

@@ -1,5 +1,12 @@
 {
-  "version": 2,
-  "builds": [{ "src": "api/index.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/api/index.js" }]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/", "destination": "/api" },
+    { "source": "/api/:path*", "destination": "/api/index.js" }
+  ],
+  "redirects": [
+    { "source": "/old-path", "destination": "/new-path", "permanent": true }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
