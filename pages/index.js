@@ -1,98 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            /* Remove any background property here */
-            min-height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .lang-switcher {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            z-index: 10;
-        }
-        .lang-switcher button {
-            background: #fff;
-            color: #333;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 6px 14px;
-            margin-left: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background 0.2s, color 0.2s;
-        }
-        .lang-switcher button.active,
-        .lang-switcher button:hover {
-            background: #4158D0;
-            color: #fff;
-            border-color: #4158D0;
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <div class="gradient-bg" id="gradient-bg"></div>
-  <div class="gradient-fade" id="gradient-fade"></div>
-  <div class="lang-switcher">
-        <button class="active" id="en-btn">English</button>
-        <button id="zh-btn">中文</button>
-    </div>
-    <!-- From Uiverse.io by MikeAndrewDesigner --> 
-    <div class="e-card playing">
-      <div class="image"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="infotop" id="info-top">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="icon">
-          <path fill="currentColor" d="M19.4133 4.89862L14.5863 2.17544C12.9911 1.27485 11.0089 1.27485 9.41368 2.17544L4.58674
-          4.89862C2.99153 5.7992 2 7.47596 2 9.2763V14.7235C2 16.5238 2.99153 18.2014 4.58674 19.1012L9.41368
-          21.8252C10.2079 22.2734 11.105 22.5 12.0046 22.5C12.6952 22.5 13.3874 22.3657 14.0349 22.0954C14.2204
-          22.018 14.4059 21.9273 14.5872 21.8252L19.4141 19.1012C19.9765 18.7831 20.4655 18.3728 20.8651
-          17.8825C21.597 16.9894 22 15.8671 22 14.7243V9.27713C22 7.47678 21.0085 5.7992 19.4133 4.89862ZM4.10784
-          14.7235V9.2763C4.10784 8.20928 4.6955 7.21559 5.64066 6.68166L10.4676 3.95848C10.9398 3.69152 11.4701
-          3.55804 11.9996 3.55804C12.5291 3.55804 13.0594 3.69152 13.5324 3.95848L18.3593 6.68166C19.3045 7.21476
-          19.8922 8.20928 19.8922 9.2763V9.75997C19.1426 9.60836 18.377 9.53091 17.6022 9.53091C14.7929 9.53091
-          12.1041 10.5501 10.0309 12.3999C8.36735 13.8847 7.21142 15.8012 6.68783 17.9081L5.63981 17.3165C4.69466
-          16.7834 4.10699 15.7897 4.10699 14.7235H4.10784ZM10.4676 20.0413L8.60933 18.9924C8.94996 17.0479 9.94402
-          15.2665 11.4515 13.921C13.1353 12.4181 15.3198 11.5908 17.6022 11.5908C18.3804 11.5908 19.1477 11.6864
-          19.8922 11.8742V14.7235C19.8922 15.2278 19.7589 15.7254 19.5119 16.1662C18.7615 15.3596 17.6806 14.8528
-           16.4783 14.8528C14.2136 14.8528 12.3781 16.6466 12.3781 18.8598C12.3781 19.3937 12.4861 19.9021 12.68
-           20.3676C11.9347 20.5316 11.1396 20.4203 10.4684 20.0413H10.4676Z"></path>
-        </svg>
-        <br>      
-        <span id="main-text">Making the website</span>
-        <br>
-        <div class="name" id="coming-soon">Coming Soon</div>
-      </div>
-    </div>
-    <div class="version-label" id="version-label">Version: Alpha 0.30</div>
-    <!-- From Uiverse.io by alexruix --> 
-<div class="input-group bottom-left">
-  <input required="" type="text" name="text" autocomplete="off" class="input">
-  <label class="user-label">First Name</label>
-</div>
-    <script>
-  import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PreRegisterForm from '../components/PreRegisterForm';
+import PopupNotification from '../components/PopupNotification';
+import PreRegisterOverlay from '../components/PreRegisterOverlay';
 
 export default function Home() {
   const [lang, setLang] = useState('en');
   const [mainText, setMainText] = useState('Making the website');
   const [comingSoon, setComingSoon] = useState('Coming Soon');
   const [version, setVersion] = useState('Version: Alpha 0.30');
+  const [showOverlay, setShowOverlay] = useState(false);
 
-  // Language switching logic
   useEffect(() => {
     const savedLang = typeof window !== 'undefined' ? localStorage.getItem('siteLang') : null;
     let browserLang = 'en';
@@ -107,39 +24,33 @@ export default function Home() {
     if (lang === 'zh') {
       setMainText('网站建设中');
       setComingSoon('敬请期待');
-      setVersion('版本: 最初 0.30');
+      setVersion('版本: 最初 0.41');
     } else {
       setMainText('Making the website');
       setComingSoon('Coming Soon');
-      setVersion('Version: Alpha 0.30');
+      setVersion('Version: Alpha 0.41');
     }
     if (typeof window !== 'undefined') {
       localStorage.setItem('siteLang', lang);
     }
   }, [lang]);
 
-  // Gradient background logic (simplified)
-  useEffect(() => {
-    function getUniqueRandomColors(count) {
-      const colors = new Set();
-      while (colors.size < count) {
-        colors.add('#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0'));
-      }
-      return Array.from(colors);
-    }
-    function setRandomGradient() {
-      const colors = getUniqueRandomColors(4);
-      document.body.style.backgroundImage = `linear-gradient(-45deg, ${colors.join(', ')})`;
-    }
-    setRandomGradient();
-    const interval = setInterval(setRandomGradient, 15000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      {/* Show pop-up notification on page load */}
+      <PopupNotification
+        message={
+          lang === 'zh'
+            ? '🎉 预注册现已开放！点击这里进行预注册。'
+            : '🎉 Pre-registration is now available! Click here to pre-register.'
+        }
+        duration={6000} // 6 seconds, adjust as needed
+        onClick={() => setShowOverlay(true)}
+      />
+      <PreRegisterOverlay open={showOverlay} onClose={() => setShowOverlay(false)} />
+
       {/* Language Switcher */}
-      <div style={{ position: 'absolute', top: 24, right: 32, zIndex: 10 }}>
+      <div className="lang-switcher" style={{ position: 'absolute', top: 24, right: 32, zIndex: 10 }}>
         <button
           className={lang === 'en' ? 'active' : ''}
           onClick={() => setLang('en')}
@@ -189,32 +100,7 @@ export default function Home() {
       <div className="version-label">{version}</div>
 
       {/* Pre-registration notification and form */}
-      <div
-        style={{
-          background: '#e3f2fd',
-          color: '#1565c0',
-          padding: '12px 18px',
-          borderRadius: '8px',
-          marginTop: '32px',
-          fontWeight: 'bold',
-          border: '1px solid #90caf9',
-          maxWidth: 400,
-        }}
-      >
-        🎉 {lang === 'zh'
-          ? '预注册现已开放！在下方登记，第一时间获取上线通知。'
-          : 'Pre-registration is now available! Sign up below to be the first to know when we launch.'}
-      </div>
-      <PreRegisterForm />
-
-      {/* Bottom-left input group */}
-      <div className="input-group bottom-left">
-        <input required type="text" name="text" autoComplete="off" className="input" />
-        <label className="user-label">First Name</label>
-      </div>
+      {/* <PreRegisterForm /> */}
     </div>
   );
 }
-    </script>
-</body>
-</html>
