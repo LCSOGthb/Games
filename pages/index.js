@@ -24,11 +24,11 @@ export default function Home() {
     if (lang === 'zh') {
       setMainText('网站建设中');
       setComingSoon('敬请期待');
-      setVersion('版本: 最初 0.49');
+      setVersion('版本: 最初 0.54');
     } else {
       setMainText('Making the website');
       setComingSoon('Coming Soon');
-      setVersion('Version: Alpha 0.49');
+      setVersion('Version: Alpha 0.54');
     }
     if (typeof window !== 'undefined') {
       localStorage.setItem('siteLang', lang);
