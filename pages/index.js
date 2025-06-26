@@ -24,11 +24,11 @@ export default function Home() {
     if (lang === 'zh') {
       setMainText('网站建设中');
       setComingSoon('敬请期待');
-      setVersion('版本: 最初 0.41');
+      setVersion('版本: 最初 0.49');
     } else {
       setMainText('Making the website');
       setComingSoon('Coming Soon');
-      setVersion('Version: Alpha 0.41');
+      setVersion('Version: Alpha 0.49');
     }
     if (typeof window !== 'undefined') {
       localStorage.setItem('siteLang', lang);
@@ -37,15 +37,37 @@ export default function Home() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      {/* Show pop-up notification on page load */}
+      {/* Top-left Pre-register button */}
+      <button
+        onClick={() => setShowOverlay(true)}
+        style={{
+          position: 'fixed',
+          top: 24,
+          left: 24,
+          zIndex: 10001,
+          padding: '10px 24px',
+          borderRadius: '8px',
+          border: 'none',
+          background: '#1565c0',
+          color: '#fff',
+          fontWeight: 'bold',
+          fontSize: '1rem',
+          cursor: 'pointer',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+        }}
+      >
+        {lang === 'zh' ? '预注册' : 'Pre-register'}
+      </button>
+
+      {/* Unclickable notification with new instructions */}
       <PopupNotification
         message={
           lang === 'zh'
-            ? '🎉 预注册现已开放！点击这里进行预注册。'
-            : '🎉 Pre-registration is now available! Click here to pre-register.'
+            ? '🎉 预注册现已开放！请点击左上角的“预注册”按钮进行登记。'
+            : '🎉 Pre-registration is now available! Click the "Pre-register" button at the top left to sign up.'
         }
-        duration={6000} // 6 seconds, adjust as needed
-        onClick={() => setShowOverlay(true)}
+        duration={6000}
+        // Remove onClick to make it unclickable
       />
       <PreRegisterOverlay open={showOverlay} onClose={() => setShowOverlay(false)} />
 
