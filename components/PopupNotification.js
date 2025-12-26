@@ -1,21 +1,29 @@
 import { useEffect, useState } from 'react';
 
-export default function PopupNotification({ message, duration = 5000, onClick }) {
-  const [visible, setVisible] = useState(false);
+export default function PopupNotification({
+  message,
+  duration = 5000,
+  onClick,
+}) {
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Show the popup after mount
-    setVisible(true);
-    // Hide after duration
-    const timer = setTimeout(() => setVisible(false), duration);
-    return () => clearTimeout(timer);
-  }, [duration]);
+    if (!message) return;
 
-  if (!visible) return null;
+    setVisible(true);
+    const timer = setTimeout(() => setVisible(false), duration);
+
+    return () => clearTimeout(timer);
+  }, [message, duration]);
+
+  if (!visible || !message) return null;
 
   return (
     <div
+      role="alert"
+      aria-live="assertive"
       onClick={onClick}
+      title="Click to pre-register"
       style={{
         position: 'fixed',
         top: 24,
@@ -31,11 +39,11 @@ export default function PopupNotification({ message, duration = 5000, onClick })
         maxWidth: 360,
         fontSize: '1rem',
         cursor: 'pointer',
-        transform: visible ? 'translateX(0)' : 'translateX(120%)',
-        opacity: visible ? 1 : 0,
-        transition: 'transform 0.5s cubic-bezier(.4,0,.2,1), opacity 0.5s cubic-bezier(.4,0,.2,1)',
+        transform: 'translateX(0)',
+        opacity: 1,
+        transition:
+          'transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1)',
       }}
-      title="Click to pre-register"
     >
       {message}
     </div>
