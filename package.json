@@ -19,6 +19,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
-    "wrangler": "^4.22.0"
+    "wrangler": "^4.59.3"
   }
 }
