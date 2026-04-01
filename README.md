@@ -11,7 +11,6 @@
 ![GitHub branch check runs](https://img.shields.io/github/check-runs/LCSOGthb/Games/main)
 ![GitHub branch status](https://img.shields.io/github/checks-status/LCSOGthb/Games/main)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/LCSOGthb/Games)
-![GitHub repo file or directory count](https://img.shields.io/github/directory-file-count/LCSOGthb/Games)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LCSOGthb/Games)
 
 CodeRabbit
@@ -19,9 +18,6 @@ CodeRabbit
 
 CodeFactor
 [![CodeFactor](https://www.codefactor.io/repository/github/lcsogthb/games/badge)](https://www.codefactor.io/repository/github/lcsogthb/games)
-
-Codacy
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7453b54fbc364247a59fe455001de0cf)](https://app.codacy.com/gh/LCSOGthb/Games/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 Codecov
 [![codecov](https://codecov.io/github/LCSOGthb/Games/graph/badge.svg?token=YH1MJBD9W4)](https://codecov.io/github/LCSOGthb/Games)
