@@ -37,12 +37,6 @@ Qlty
 [![Maintainability](https://qlty.sh/badges/7f71c7d1-f72e-406c-9fac-b8a3d2852be6/maintainability.svg)](https://qlty.sh/gh/LCSOGthb/projects/Games)
 [![Code Coverage](https://qlty.sh/badges/7f71c7d1-f72e-406c-9fac-b8a3d2852be6/test_coverage.svg)](https://qlty.sh/gh/LCSOGthb/projects/Games)
 
-Scrutinizer
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/?branch=main)
-[![Code Coverage](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/?branch=main)
-[![Build Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/build.png?b=main)](https://scrutinizer-ci.com/g/LCSOGthb/Games/build-status/main)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/LCSOGthb/Games/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)
-
 SonarQube
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=bugs)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
