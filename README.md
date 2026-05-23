@@ -54,3 +54,15 @@ SonarQube
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=LCSOGthb_Clown&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=LCSOGthb_Clown)
+
+DeepScan
+[![DeepScan grade](https://deepscan.io/api/teams/29732/projects/31716/branches/1029992/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=29732&pid=31716&bid=1029992)
+
+Codacy
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/816099ff42fa41b391f9a8394274f627)](https://app.codacy.com/gh/LCSOGthb/Games/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+
+CodeScene
+[![CodeScene Average Code Health](https://codescene.io/projects/79939/status-badges/average-code-health)](https://codescene.io/projects/79939)
+[![CodeScene Hotspot Code Health](https://codescene.io/projects/79939/status-badges/hotspot-code-health)](https://codescene.io/projects/79939)
+[![CodeScene Missed Goals](https://codescene.io/projects/79939/status-badges/missed-goals)](https://codescene.io/projects/79939)
+[![CodeScene System Mastery](https://codescene.io/projects/79939/status-badges/system-mastery)](https://codescene.io/projects/79939)
