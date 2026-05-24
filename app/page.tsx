@@ -50,34 +50,40 @@ export default function Home() {
     <>
       <a
         href="#game-list"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-foreground focus:font-semibold focus:ring-2 focus:ring-accent"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:font-semibold"
       >
         Skip to game list
       </a>
 
-      <header className="sticky top-0 z-40 backdrop-blur-md bg-surface/50 border-b border-primary/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="text-5xl font-black text-balance">Game Collection</h1>
-          <p className="text-foreground-secondary mt-2 text-lg">
+      <header className="sticky top-0 z-40 bg-surface/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Game Collection
+          </h1>
+          <p className="text-foreground-muted mt-2 text-base">
             Discover our selection of fun and challenging games
           </p>
         </div>
       </header>
 
-      <main id="main-content" className="min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <main id="main-content" className="min-h-screen bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-          <ul
-            id="game-list"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0"
-            aria-label="Available games"
-          >
-            {games.map((game) => (
-              <li key={game.id}>
-                <GameCard game={game} />
-              </li>
-            ))}
-          </ul>
+          <section aria-labelledby="games-heading">
+            <h2 id="games-heading" className="sr-only">Available Games</h2>
+            
+            <ul
+              id="game-list"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0"
+              aria-label="Available games"
+            >
+              {games.map((game) => (
+                <li key={game.id}>
+                  <GameCard game={game} />
+                </li>
+              ))}
+            </ul>
+          </section>
 
         </div>
       </main>
