@@ -12,37 +12,46 @@ interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   return (
-    <div className="group cursor-pointer">
-      <div className="relative overflow-hidden rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl bg-white">
-        {/* Image Container */}
-        <div className="relative h-48 overflow-hidden bg-gray-200">
-          <img
-            src={game.image}
-            alt={game.title}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-          <div className="absolute top-3 right-3">
-            <span className="inline-block bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
-              {game.category}
-            </span>
-          </div>
+    <article
+      className="flex flex-col rounded-lg shadow-md bg-white overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+      aria-label={`${game.title} — ${game.category} game`}
+    >
+      {/* Image */}
+      <div className="relative h-48 overflow-hidden bg-gray-200">
+        <img
+          src={game.image}
+          alt={`Preview image for ${game.title}`}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute top-3 right-3" aria-hidden="true">
+          <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+            {game.category}
+          </span>
         </div>
+      </div>
 
-        {/* Content Container */}
-        <div className="p-4">
-          <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
-            {game.title}
-          </h3>
-          <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-            {game.description}
-          </p>
+      {/* Content */}
+      <div className="flex flex-col flex-1 p-5">
+        <h2 className="text-lg font-bold text-gray-900 mb-1">
+          {game.title}
+        </h2>
 
-          {/* Button */}
-          <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 active:scale-95">
+        <p className="sr-only">Category: {game.category}</p>
+
+        <p className="text-sm text-gray-700 mb-5 leading-relaxed">
+          {game.description}
+        </p>
+
+        <div className="mt-auto">
+          <button
+            type="button"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active:scale-95"
+            aria-label={`Play ${game.title}`}
+          >
             Play Now
           </button>
         </div>
       </div>
-    </div>
+    </article>
   )
 }
