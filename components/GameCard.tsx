@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
 interface GameCardProps {
   game: {
-    id: number
-    title: string
-    description: string
-    image: string
-    category: string
-  }
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+    category: string;
+  };
 }
 
 export default function GameCard({ game }: GameCardProps) {
@@ -23,7 +23,7 @@ export default function GameCard({ game }: GameCardProps) {
           alt={`Preview image for ${game.title}`}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        
+
         {/* Category badge */}
         <div className="absolute top-3 left-3" aria-hidden="true">
           <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-accent text-white shadow-sm">
@@ -34,9 +34,7 @@ export default function GameCard({ game }: GameCardProps) {
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-5">
-        <h2 className="text-lg font-semibold text-white mb-2">
-          {game.title}
-        </h2>
+        <h2 className="text-lg font-semibold text-white mb-2">{game.title}</h2>
 
         <p className="sr-only">Category: {game.category}</p>
 
@@ -55,5 +53,5 @@ export default function GameCard({ game }: GameCardProps) {
         </div>
       </div>
     </article>
-  )
+  );
 }
