@@ -1,8 +1,11 @@
-This document outlines the versions of our project that receive security updates, as well as how to report vulnerabilities responsibly.
+# Security Policy
 
-Supported Versions
-Version	Supported?
-5.1.x	✅ (Active security updates)
-5.0.x	❌ (No longer supported)
-4.0.x	✅ (Limited security fixes)
-< 4.0	❌ (No longer supported)
+## Supported Versions
+
+| Version | Supported          |
+| ------- | ------------------ |
+| All     | :white_check_mark: |
+
+## Reporting a Vulnerability
+
+Go to Issues Report a Vulnerability
