@@ -50,26 +50,26 @@ export default function Home() {
     <>
       <a
         href="#game-list"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:font-semibold"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-foreground focus:font-semibold focus:ring-2 focus:ring-accent"
       >
         Skip to game list
       </a>
 
-      <main id="main-content" className="min-h-screen bg-gray-50">
-        <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <header className="sticky top-0 z-40 backdrop-blur-md bg-surface/50 border-b border-primary/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <h1 className="text-5xl font-black text-balance">Game Collection</h1>
+          <p className="text-foreground-secondary mt-2 text-lg">
+            Discover our selection of fun and challenging games
+          </p>
+        </div>
+      </header>
 
-          <header className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-3 text-balance">
-              Game Collection
-            </h1>
-            <p className="text-lg text-gray-700 text-balance">
-              Choose from our selection of fun and challenging games
-            </p>
-          </header>
+      <main id="main-content" className="min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
           <ul
             id="game-list"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0"
             aria-label="Available games"
           >
             {games.map((game) => (

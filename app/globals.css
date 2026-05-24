@@ -1,19 +1,24 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #3b82f6;
-  --color-primary-dark: #1e40af;
-  --color-secondary: #10b981;
-  --color-accent: #f59e0b;
-  --color-neutral-50: #f9fafb;
-  --color-neutral-100: #f3f4f6;
-  --color-neutral-200: #e5e7eb;
-  --color-neutral-300: #d1d5db;
-  --color-neutral-600: #4b5563;
-  --color-neutral-700: #374151;
-  --color-neutral-900: #111827;
-  --color-background: #ffffff;
-  --color-foreground: #111827;
+  --color-background: #0f0f1e;
+  --color-surface: #1a1a2e;
+  --color-surface-light: #252540;
+  --color-foreground: #ffffff;
+  --color-foreground-secondary: #b0b0c3;
+  --color-primary: #00d9ff;
+  --color-primary-dark: #00a8cc;
+  --color-accent: #ff006e;
+  --color-accent-secondary: #8338ec;
+  --color-success: #00ff88;
+  --color-neutral-50: #f0f0ff;
+  --color-neutral-100: #e0e0ff;
+  --color-neutral-200: #c0c0e0;
+  --color-neutral-300: #a0a0c0;
+  --color-neutral-600: #6060a0;
+  --color-neutral-700: #404080;
+  --color-neutral-900: #0f0f1e;
+  --radius: 0.75rem;
 }
 
 * {
@@ -24,10 +29,58 @@
 
 html {
   background-color: var(--color-background);
+  color-scheme: dark;
 }
 
 body {
   color: var(--color-foreground);
   background-color: var(--color-background);
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(131, 56, 236, 0.05) 100%);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 900;
+  color: var(--color-foreground);
+  background: linear-gradient(135deg, #00d9ff 0%, #ff006e 50%, #8338ec 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+}
+
+p {
+  color: var(--color-foreground-secondary);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+button,
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
