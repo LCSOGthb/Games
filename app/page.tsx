@@ -1,25 +1,11 @@
 "use client";
 
 import { useState } from "react";
-
-const translations = {
-  en: {
-    title: "Coming Soon",
-    subtitle: "Something amazing is on the way",
-    language: "English",
-  },
-  zh: {
-    title: "即将上线",
-    subtitle: "精彩内容即将呈现",
-    language: "中文",
-  },
-};
-
-type Language = keyof typeof translations;
+import { getTranslation, type Language } from "@/lib/translations";
 
 export default function Home() {
   const [lang, setLang] = useState<Language>("en");
-  const t = translations[lang];
+  const t = getTranslation(lang);
 
   return (
     <>

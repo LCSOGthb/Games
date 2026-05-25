@@ -14,12 +14,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@codspeed/vitest-plugin": "^5.4.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/react": "19.2.15",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "tailwindcss": "^4",
+    "vitest": "^4.1.7",
     "wrangler": "^4.80.0"
   }
 }
