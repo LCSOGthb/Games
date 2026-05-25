@@ -7,10 +7,7 @@ import {
   paginateGames,
   type Game,
 } from "../lib/games";
-import {
-  getTranslation,
-  getAvailableLanguages,
-} from "../lib/translations";
+import { getTranslation, getAvailableLanguages } from "../lib/translations";
 
 // --- Test data ---
 

@@ -19,7 +19,7 @@ export function searchGames(games: Game[], query: string): Game[] {
   return games.filter(
     (game) =>
       game.title.toLowerCase().includes(lowerQuery) ||
-      game.description.toLowerCase().includes(lowerQuery)
+      game.description.toLowerCase().includes(lowerQuery),
   );
 }
 
@@ -30,7 +30,7 @@ export function getUniqueCategories(games: Game[]): string[] {
 export function paginateGames(
   games: Game[],
   page: number,
-  pageSize: number
+  pageSize: number,
 ): Game[] {
   const start = (page - 1) * pageSize;
   return games.slice(start, start + pageSize);
