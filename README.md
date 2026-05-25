@@ -18,6 +18,9 @@
 ![GitHub Created At](https://img.shields.io/github/created-at/LCSOGthb/Games)
 ![GitHub last commit](https://img.shields.io/github/last-commit/LCSOGthb/Games)
 
+CodSpeed
+[![CodSpeed](https://img.shields.io/endpoint?url=https://codspeed.io/badge.json)](https://codspeed.io/LCSOGthb/Games?utm_source=badge)
+
 CodeRabbit
 ![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/LCSOGthb/Games?utm_source=oss&utm_medium=github&utm_campaign=LCSOGthb%2FGames&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 
