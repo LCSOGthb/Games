@@ -69,3 +69,6 @@ CodeScene
 [![CodeScene Hotspot Code Health](https://codescene.io/projects/79939/status-badges/hotspot-code-health)](https://codescene.io/projects/79939)
 [![CodeScene Missed Goals](https://codescene.io/projects/79939/status-badges/missed-goals)](https://codescene.io/projects/79939)
 [![CodeScene System Mastery](https://codescene.io/projects/79939/status-badges/system-mastery)](https://codescene.io/projects/79939)
+
+Codeac
+[![Codeac](https://static.codeac.io/badges/2-911551762.svg "Codeac")](https://app.codeac.io/github/LCSOGthb/Games)
