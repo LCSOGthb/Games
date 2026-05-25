@@ -11,7 +11,16 @@ import type { Game } from "@/lib/games";
 
 // Build a larger dataset from the base games for more realistic benchmarks
 function generateLargeGameList(size: number): Game[] {
-  const categories = ["Strategy", "Trivia", "Puzzle", "Arcade", "Word", "RPG", "Action", "Simulation"];
+  const categories = [
+    "Strategy",
+    "Trivia",
+    "Puzzle",
+    "Arcade",
+    "Word",
+    "RPG",
+    "Action",
+    "Simulation",
+  ];
   const result: Game[] = [];
   for (let i = 0; i < size; i++) {
     result.push({

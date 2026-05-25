@@ -51,10 +51,7 @@ export const games: Game[] = [
   },
 ];
 
-export function filterByCategory(
-  gameList: Game[],
-  category: string,
-): Game[] {
+export function filterByCategory(gameList: Game[], category: string): Game[] {
   return gameList.filter(
     (game) => game.category.toLowerCase() === category.toLowerCase(),
   );
@@ -80,9 +77,6 @@ export function getCategories(gameList: Game[]): string[] {
   return [...new Set(gameList.map((game) => game.category))].sort();
 }
 
-export function getGameById(
-  gameList: Game[],
-  id: number,
-): Game | undefined {
+export function getGameById(gameList: Game[], id: number): Game | undefined {
   return gameList.find((game) => game.id === id);
 }
