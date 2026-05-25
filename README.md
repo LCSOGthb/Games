@@ -66,6 +66,9 @@ Codacy
 
 CodeScene
 [![CodeScene Average Code Health](https://codescene.io/projects/79939/status-badges/average-code-health)](https://codescene.io/projects/79939)
+
+GuardRails
+[![GuardRails badge](https://api.guardrails.io/v2/badges/716795?token=0ed261234e4e51bfb9562d7161ce66cce193e4c9d9f9092cc8d0caf081e532fa)](https://dashboard.guardrails.io/gh/LCSOGthb/repos/716795)
 [![CodeScene Hotspot Code Health](https://codescene.io/projects/79939/status-badges/hotspot-code-health)](https://codescene.io/projects/79939)
 [![CodeScene Missed Goals](https://codescene.io/projects/79939/status-badges/missed-goals)](https://codescene.io/projects/79939)
 [![CodeScene System Mastery](https://codescene.io/projects/79939/status-badges/system-mastery)](https://codescene.io/projects/79939)
