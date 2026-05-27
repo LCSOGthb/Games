@@ -100,21 +100,24 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border-default);
   border-radius: 1.5rem;
-  padding: 3rem 4rem;
   text-align: center;
   box-shadow:
     0 25px 50px -12px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-  max-width: 480px;
-  width: 100%;
+  /* Square: fluid size clamped between 280px and 480px */
+  width: clamp(280px, min(80vw, 80vh), 480px);
+  height: clamp(280px, min(80vw, 80vh), 480px);
+  /* Center content inside the square */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .coming-soon-card {
-    padding: 2rem 1.5rem;
-    margin: 0 1rem;
-    border-radius: 1rem;
-    max-width: 320px;
+    border-radius: 1.125rem;
   }
 }
 
