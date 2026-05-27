@@ -37,7 +37,7 @@ export default function Home() {
       {/* Main content - centered card */}
       <main
         id="main-content"
-        className="relative z-10 flex min-h-screen items-center justify-center px-4"
+        className="fixed inset-0 z-10 flex items-center justify-center p-4"
       >
         <div className="coming-soon-card">
           <h1 className="coming-soon-title">{t.title}</h1>
@@ -46,8 +46,8 @@ export default function Home() {
       </main>
 
       {/* Version label - bottom right */}
-      <div className="version-label" aria-label="Version 0.1 Beta">
-        Version: 0.1 Beta
+      <div className="version-label" aria-label="Version 0.13 Beta">
+        Version: 0.13 Beta
       </div>
     </>
   );
