@@ -46,8 +46,8 @@ export default function Home() {
       </main>
 
       {/* Version label - bottom right */}
-      <div className="version-label" aria-label="Version 0.1 Beta">
-        Version: 0.1 Beta
+      <div className="version-label" aria-label="Version 0.13 Beta">
+        Version: 0.13 Beta
       </div>
     </>
   );
