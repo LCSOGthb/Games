@@ -17,7 +17,7 @@ export default function Home() {
       <div className="animated-gradient" aria-hidden="true" />
 
       {/* Language selector - top right */}
-      <div className="fixed top-4 right-4 z-20 sm:top-6 sm:right-6">
+      <div className="fixed top-6 right-6 z-20 sm:top-8 sm:right-8">
         <div className="language-selector">
           <select
             id="language-select"
