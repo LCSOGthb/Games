@@ -37,7 +37,7 @@ export default function Home() {
       {/* Main content - centered card */}
       <main
         id="main-content"
-        className="fixed inset-0 z-10 flex items-center justify-center p-4 mx-auto"
+        className="fixed inset-0 z-10 flex items-center justify-center p-4"
       >
         <div className="coming-soon-card" style={{ margin: "auto" }}>
           <h1 className="coming-soon-title">{t.title}</h1>
