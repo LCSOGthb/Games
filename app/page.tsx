@@ -39,10 +39,6 @@ export default function Home() {
         <div className="coming-soon-card" style={{ margin: "auto" }}>
           <h1 className="coming-soon-title">{t.title}</h1>
           <p className="coming-soon-subtitle">{t.subtitle}</p>
-          <div className="action-buttons">
-            <button className="btn btn-primary">Get Notified</button>
-            <button className="btn btn-secondary">Learn More</button>
-          </div>
         </div>
       </main>
 
