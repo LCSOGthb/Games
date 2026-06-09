@@ -117,8 +117,19 @@ body {
   margin-right: auto;
 }
 
+@media (max-width: 768px) {
+  .coming-soon-card {
+    width: clamp(260px, 90vw, 420px);
+    height: clamp(260px, 90vw, 420px);
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .coming-soon-card {
+    width: clamp(240px, 85vw, 320px);
+    height: clamp(240px, 85vw, 320px);
+    padding: 1.25rem;
     border-radius: 1.125rem;
   }
 }
@@ -136,9 +147,22 @@ body {
   margin-bottom: 0.75rem;
 }
 
+@media (max-width: 768px) {
+  .coming-soon-title {
+    font-size: 2.25rem;
+  }
+}
+
 @media (max-width: 640px) {
   .coming-soon-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -148,9 +172,21 @@ body {
   font-weight: 400;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .coming-soon-subtitle {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .coming-soon-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-subtitle {
+    font-size: 0.8rem;
   }
 }
 
@@ -224,6 +260,14 @@ body {
   letter-spacing: 0.02em;
   color: #ffffff;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+  .version-label {
+    font-size: 0.625rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
 }
 
 /* ========================================
