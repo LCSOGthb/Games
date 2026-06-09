@@ -19,9 +19,6 @@ export default function Home() {
       {/* Language selector - top right */}
       <div className="fixed top-4 right-4 z-20 sm:top-6 sm:right-6">
         <div className="language-selector">
-          <label htmlFor="language-select" className="sr-only">
-            Select language
-          </label>
           <select
             id="language-select"
             value={lang}
@@ -39,7 +36,7 @@ export default function Home() {
         id="main-content"
         className="fixed inset-0 z-10 flex items-center justify-center p-4"
       >
-        <div className="coming-soon-card">
+        <div className="coming-soon-card" style={{ margin: "auto" }}>
           <h1 className="coming-soon-title">{t.title}</h1>
           <p className="coming-soon-subtitle">{t.subtitle}</p>
         </div>
