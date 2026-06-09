@@ -19,9 +19,6 @@ export default function Home() {
       {/* Language selector - top right */}
       <div className="fixed top-4 right-4 z-20 sm:top-6 sm:right-6">
         <div className="language-selector">
-          <label htmlFor="language-select" className="sr-only">
-            Select language
-          </label>
           <select
             id="language-select"
             value={lang}
