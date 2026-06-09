@@ -39,7 +39,7 @@ export default function Home() {
         id="main-content"
         className="fixed inset-0 z-10 flex items-center justify-center p-4"
       >
-        <div className="coming-soon-card" style={{ margin: "auto" }}>
+        <div className="coming-soon-card">
           <h1 className="coming-soon-title">{t.title}</h1>
           <p className="coming-soon-subtitle">{t.subtitle}</p>
         </div>
