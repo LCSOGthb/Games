@@ -57,13 +57,14 @@ body {
   background: linear-gradient(
     135deg,
     #0f172a 0%,
-    #1e293b 25%,
-    #334155 50%,
-    #1e40af 75%,
+    #7c3aed 20%,
+    #2563eb 40%,
+    #06b6d4 60%,
+    #ec4899 80%,
     #0f172a 100%
   );
   background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+  animation: gradientShift 20s ease infinite, colorCycle 45s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
@@ -75,6 +76,24 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  25% {
+    filter: hue-rotate(60deg) saturate(1.2);
+  }
+  50% {
+    filter: hue-rotate(120deg) saturate(1.1);
+  }
+  75% {
+    filter: hue-rotate(240deg) saturate(1.2);
+  }
+  100% {
+    filter: hue-rotate(360deg) saturate(1);
   }
 }
 
