@@ -276,20 +276,6 @@ body {
    LANGUAGE SELECTOR
    ======================================== */
 
-.language-selector-wrapper {
-  position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 20;
-}
-
-@media (min-width: 640px) {
-  .language-selector-wrapper {
-    top: 2rem;
-    right: 2rem;
-  }
-}
-
 .language-selector {
   position: relative;
   display: inline-block;
