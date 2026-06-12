@@ -64,7 +64,9 @@ body {
     #1a1f35 100%
   );
   background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite, colorCycle 45s ease-in-out infinite;
+  animation:
+    gradientShift 20s ease infinite,
+    colorCycle 45s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
